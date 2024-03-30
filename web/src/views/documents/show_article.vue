@@ -1,8 +1,10 @@
 <template>
 <div>
+  <div class="scroll-container">
   <div style="font-size: 50px;text-align: center">{{articleStoreData.currentArticle.value.title}}</div>
   <div style="color: #9b9da1;text-align: center">{{articleStoreData.currentArticle.value.introduction}}</div>
   <v-md-preview :text="articleStoreData.currentArticle.value.content"></v-md-preview>
+  </div>
 </div>
 </template>
 
@@ -16,5 +18,7 @@ const articleStoreData = storeToRefs(articleStore)
 </script>
 
 <style scoped>
-
+.scroll-container {
+  overflow: auto; /* 设置显示滚动条 */
+}
 </style>
