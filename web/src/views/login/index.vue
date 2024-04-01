@@ -132,13 +132,13 @@ onMounted(() => {
           margin-left: 10px;
           font-size: 28px;
           color: #ffffff; //标题颜色
-          text-shadow: #FC0 1px 0 10px;
+          text-shadow: #000000b8 1px 0 10px;
         }
 
         .login-left-logo-text-msg {
           font-size: 12px;
-          color: rgba(207, 226, 255, 0.85); //副标题颜色
-          text-shadow: #FC0 1px 0 10px;
+          color: #ffffff; //副标题颜色
+          text-shadow: #000000b8 1px 0 10px;
         }
       }
     }

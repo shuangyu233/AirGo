@@ -2,7 +2,7 @@
   <div class="layout-footer pb15">
     <div class="layout-footer-warp">
       <div class="mt5">
-        <el-link herf="https://github.com/shuangyu233/AirGo">Version </el-link>
+        <el-link herf="https://github.com/shuangyu233/AirGo">Version old-version</el-link>
         <span> | </span>
         <el-link href="https://github.com/ppoonk/AirGo">© AirGo</el-link>
         <span> | </span>
