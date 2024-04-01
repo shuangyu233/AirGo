@@ -2,11 +2,11 @@
   <div class="layout-footer pb15">
     <div class="layout-footer-warp">
       <div class="mt5">
-        <el-link>Version old-version</el-link>
+        <el-link herf="https://github.com/shuangyu233/AirGo">Version </el-link>
         <span> | </span>
         <el-link href="https://github.com/ppoonk/AirGo">© AirGo</el-link>
         <span> | </span>
-        <el-link >By {{ themeConfig.globalTitle }}</el-link>
+        <el-link herf="fylink.free.hr">By {{ themeConfig.globalTitle }}</el-link>
       </div>
     </div>
   </div>
