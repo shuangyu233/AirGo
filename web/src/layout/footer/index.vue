@@ -6,7 +6,7 @@
         <span> | </span>
         <el-link href="https://github.com/ppoonk/AirGo">© AirGo</el-link>
         <span> | </span>
-        <el-link herf="fylink.free.hr">By {{ themeConfig.globalTitle }}</el-link>
+        <el-link herf="https://fylink.free.hr">By {{ themeConfig.globalTitle }}</el-link>
       </div>
     </div>
   </div>

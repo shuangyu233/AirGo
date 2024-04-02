@@ -162,7 +162,7 @@ const DialogCustomerServiceDetailsRef = ref();
 const state = reactive({
   isShowSubDialog: false,
   isShowPushDialog: false,
-  subType: ["NekoBox", "v2rayNG", "v2rayN", "Shadowrocket", "Clash", "Surge", "Quantumult", "V2rayU"],
+  subType: ["NekoBox", "v2rayNG", "v2rayN", "Shadowrocket", "Clash(推荐)", "Surge", "Quantumult", "V2rayU"],
   currentSubUUID: "",
   QRcode: null,
   subUrlPre:[''],
