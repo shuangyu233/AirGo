@@ -62,18 +62,18 @@
         <el-form-item :label="$t('message.adminShop.Epay.epay_key')">
           <el-input v-model="adminShopStoreData.payInfo.value.epay.epay_key"/>
         </el-form-item>
-        <el-form-item :label="$t('message.adminShop.Epay.epay_main_url')">
-          <el-input v-model="adminShopStoreData.payInfo.value.epay.epay_main_url" placeholder="https://xxx.com"/>
-        </el-form-item>
+        <!--<el-form-item :label="$t('message.adminShop.Epay.epay_main_url')">
+          <el-input v-model="adminShopStoreData.payInfo.value.epay.epay_main_url" placeholder="https://epay_domain.com"/>
+        </el-form-item> -->
         <el-form-item  :label="$t('message.adminShop.Epay.epay_api_url')">
-          <el-input v-model="adminShopStoreData.payInfo.value.epay.epay_api_url" placeholder="https://xxx.com/submit.php"/>
+          <el-input v-model="adminShopStoreData.payInfo.value.epay.epay_api_url" placeholder="https://epay_domain.com/submit.php"/>
         </el-form-item>
         <el-form-item  :label="$t('message.adminShop.Epay.epay_notify_url')">
-          <el-input v-model="adminShopStoreData.payInfo.value.epay.epay_notify_url" placeholder="https://xxx.com/notify_url.php"/>
+          <el-input v-model="adminShopStoreData.payInfo.value.epay.epay_notify_url" placeholder="https://your_domain.com"/>
         </el-form-item>
         <el-form-item  :label="$t('message.adminShop.Epay.epay_return_url')">
-          <el-input v-model="adminShopStoreData.payInfo.value.epay.epay_return_url" placeholder="https://xxx.com/return_url.php"/>
-        </el-form-item>
+          <el-input v-model="adminShopStoreData.payInfo.value.epay.epay_return_url" placeholder="https://your_domain.com/return_url"/>
+        </el-form-item> 
       </div>
 
     </el-form>
