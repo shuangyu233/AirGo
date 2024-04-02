@@ -60,6 +60,7 @@ export default {
       epay_pid: "epay pid",
       epay_key: "epay key",
       epay_api_url: "epay api url",
+      epay_main_url: "epay main url",
       epay_return_url: "epay return url",
       epay_notify_url: "epay notify url",
       epay_type: "epay type",

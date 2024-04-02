@@ -83,6 +83,7 @@ export const useAdminShopStore = defineStore("adminShopStore", {
       epay: {
         epay_pid: 0,
         epay_key: '',
+        epay_main_url: '',
         epay_api_url: '',
         epay_return_url: '',
         epay_notify_url: '',
@@ -160,6 +161,7 @@ export const useAdminShopStore = defineStore("adminShopStore", {
         epay: {
           epay_pid: 0,
           epay_key: '',
+          epay_main_url: '',
           epay_api_url: '',
           epay_return_url: '',
           epay_notify_url: '',
