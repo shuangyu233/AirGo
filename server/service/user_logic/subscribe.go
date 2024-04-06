@@ -343,7 +343,8 @@ func Surge(nodes *[]model.Node) string {
 					sni = v.Sni
 				}
 				nodeItem = append(nodeItem, fmt.Sprintf("sni=%s", sni))
-				if v.AllowInsecure == true {
+
+				if v.AllowInsecure {
 					nodeItem = append(nodeItem, "skip-cert-verify=true")
 				}
 
