@@ -385,12 +385,16 @@ func Surge(nodes *[]model.Node) string {
 			nodeItem = append(nodeItem, v.Address)
 			nodeItem = append(nodeItem, fmt.Sprintf("%d", v.Port))
 			nodeItem = append(nodeItem, fmt.Sprintf("password=%s", v.UUID))
+			if v.AllowInsecure {
+				nodeItem = append(nodeItem, "skip-cert-verify=true")
+			}
 			//nodeItem = append(nodeItem, "tfo=true")
 			//nodeItem = append(nodeItem, "udp-relay=true")
 			nodeArr = append(nodeArr, strings.Join(nodeItem, ", "))
 			proxyGroupProxy = append(proxyGroupProxy, v.Remarks)
 			proxyGroupAuto = append(proxyGroupAuto, v.Remarks)
 			proxyGroupFallback = append(proxyGroupFallback, v.Remarks)
+
 		case constant.NODE_PROTOCOL_SHADOWSOCKS:
 			if strings.HasPrefix(v.Scy, "2022") {
 				continue
@@ -402,6 +406,9 @@ func Surge(nodes *[]model.Node) string {
 			nodeItem = append(nodeItem, fmt.Sprintf("encrypt-method=%s", v.Scy))
 			nodeItem = append(nodeItem, fmt.Sprintf("password=%s", SSPasswordHandler(v)))
 			nodeItem = append(nodeItem, "tfo=true")
+			if v.AllowInsecure {
+				nodeItem = append(nodeItem, "skip-cert-verify=true")
+			}
 			//nodeItem = append(nodeItem, "udp-relay=true")
 			nodeArr = append(nodeArr, strings.Join(nodeItem, ", "))
 			proxyGroupProxy = append(proxyGroupProxy, v.Remarks)
