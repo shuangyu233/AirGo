@@ -433,9 +433,10 @@ func Surge(nodes *[]model.Node) string {
 			Network_framework:          false,
 			Exclude_simple_hostnames:   true,
 			Ipv6:                       true,
+			Skip_server_cert_verify:    true,
 			Test_timeout:               4,
 			Proxy_test_url:             "http://www.gstatic.com/generate_204",
-			Geoip_maxmind_url:          "https://unpkg.zhimg.com/rulestatic@1.0.1/Country.mmdb",
+			Geoip_maxmind_url:          "https://cdn.jsdelivr.net/gh/Hackl0us/GeoIP2-CN@release/Country.mmdb",
 		},
 		Replica: model.Replica{
 			Hide_apple_request:       true,
