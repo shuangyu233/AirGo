@@ -6,7 +6,7 @@ export default {
     sort:"Sort",
     purchase:"Purchase",
     resultText1:"Please return to the homepage to check the service status",
-    resultText2:"请尽快完成支付",
+    resultText2:"Please complete payment as soon as possible",
     resultText3:"Please complete the payment as soon as possible",
     resultText4:"Go to Alipay",
     resultText5:"Go to EPay",
