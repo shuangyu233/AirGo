@@ -305,6 +305,7 @@ func Shadowrocket(nodes *[]model.Node) string {
 	return base64.StdEncoding.EncodeToString([]byte(strings.Join(nodeArr, "\r\n")))
 }
 
+// Surge 客户端订阅
 func Surge(nodes *[]model.Node) string {
 	var nodeArr, proxyGroupProxy, proxyGroupAuto, proxyGroupFallback []string
 	var subscribeInfo, proxyText string
@@ -324,7 +325,7 @@ func Surge(nodes *[]model.Node) string {
 	for _, v := range *nodes {
 
 		switch v.Protocol {
-		case constant.NODE_PROTOCOL_VMESS:
+		case constant.NODE_PROTOCOL_VMESS: //VMESS协议
 			var nodeItem []string
 			//
 			nodeItem = append(nodeItem, v.Remarks+"="+"vmess")
@@ -358,7 +359,7 @@ func Surge(nodes *[]model.Node) string {
 			proxyGroupProxy = append(proxyGroupProxy, v.Remarks)
 			proxyGroupAuto = append(proxyGroupAuto, v.Remarks)
 			proxyGroupFallback = append(proxyGroupFallback, v.Remarks)
-		case constant.NODE_PROTOCOL_TROJAN:
+		case constant.NODE_PROTOCOL_TROJAN: //Trojan协议
 			var nodeItem []string
 			nodeItem = append(nodeItem, v.Remarks+"="+"trojan")
 			nodeItem = append(nodeItem, v.Address)
@@ -379,12 +380,13 @@ func Surge(nodes *[]model.Node) string {
 			proxyGroupProxy = append(proxyGroupProxy, v.Remarks)
 			proxyGroupAuto = append(proxyGroupAuto, v.Remarks)
 			proxyGroupFallback = append(proxyGroupFallback, v.Remarks)
-		case constant.NODE_PROTOCOL_HYSTERIA:
+		case constant.NODE_PROTOCOL_HYSTERIA: //hy2协议
 			var nodeItem []string
 			nodeItem = append(nodeItem, v.Remarks+" = "+"hysteria2")
 			nodeItem = append(nodeItem, v.Address)
 			nodeItem = append(nodeItem, fmt.Sprintf("%d", v.Port))
 			nodeItem = append(nodeItem, fmt.Sprintf("password=%s", v.UUID))
+			nodeItem = append(nodeItem, "sni="+v.Address)
 			if v.AllowInsecure {
 				nodeItem = append(nodeItem, "skip-cert-verify=true")
 			}
