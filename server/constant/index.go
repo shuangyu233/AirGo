@@ -71,6 +71,6 @@ const (
 	ARTICLE_TYPE_KNOWLEDGE = "knowledge"
 
 	// github
-	AIRGO_GITHUB_API          = "https://api.github.com/repos/ppoonk/AirGo/releases/latest"
-	AIRGO_GITHUB_DOWNLOAD_PRE = "https://github.com/ppoonk/AirGo/releases/download"
+	AIRGO_GITHUB_API          = "https://api.github.com/repos/shuangyu233/AirGo/releases/latest"
+	AIRGO_GITHUB_DOWNLOAD_PRE = "https://github.com/shuangyu233/AirGo/releases/download"
 )

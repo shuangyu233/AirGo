@@ -29,7 +29,6 @@ require (
 	github.com/yudeguang/ratelimit v0.0.0-20240108053714-dcabc0e41abd
 	golang.org/x/crypto v0.22.0
 	golang.org/x/net v0.24.0
-	gopkg.in/antage/eventsource.v1 v1.0.0-20150318155416-803f4c5af225
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gopkg.in/ini.v1 v1.67.0
 	gopkg.in/yaml.v3 v3.0.1
@@ -39,6 +38,7 @@ require (
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
+	github.com/blend/go-sdk v1.20220411.3 // indirect
 	github.com/bytedance/sonic v1.11.3 // indirect
 	github.com/casbin/govaluate v1.1.1 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20230717121745-296ad89f973d // indirect
@@ -75,7 +75,6 @@ require (
 	github.com/ncruces/go-strftime v0.1.9 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.0 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
-	github.com/rogpeppe/go-internal v1.12.0 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
 	github.com/smartwalle/ncrypto v1.0.4 // indirect

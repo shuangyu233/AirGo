@@ -65,7 +65,7 @@ jobs:
           github_token: ${{ secrets.ACTION_TOKEN }}
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
-          goversion: 1.21.4
+          goversion: 1.22.2
           project_path: server
           binary_name: AirGo
           extra_files: LICENSE server/config.yaml
