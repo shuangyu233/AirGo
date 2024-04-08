@@ -226,11 +226,11 @@ const resetSubscribeUUID=(cs:CustomerService)=>{
     });
 }
 const copyLink = (subType: string) => {
-  copyText(state.currentSubUrlPre + "/api/public/sub/" + state.currentSubUUID + "?type=" + subType);
+  copyText("https://server.fylink.free.hr" + "/api/public/sub/" + state.currentSubUUID + "?type=" + subType);
 };
 const showQR = (subType: string) => {
   // TODO 多url处理
-  let link = state.currentSubUrlPre + "/api/public/sub/" + state.currentSubUUID + "?type=" + subType;
+  let link = "https://server.fylink.free.hr" + "/api/public/sub/" + state.currentSubUUID + "?type=" + subType;
   //清除上一次二维码
   qrcodeRef.value.innerHTML = "";
   new QRCode(qrcodeRef.value, {
