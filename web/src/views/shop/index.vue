@@ -28,8 +28,8 @@
                   <div class="item-txt-title">{{ v.subject }}</div>
                   <div class="item-txt-other">
                     <div style="width: 100%">
-                      <div class="item-txt-msg mb10">
-                        <span style="font-size: 25px;">{{$t('message.adminShop.Goods.quota')}} {{ v.quota }}</span>
+                      <div style="font-size:25px" class="item-txt-msg mb10">
+                        <span>{{$t('message.adminShop.Goods.quota')}} {{ v.quota }}</span>
                         <span class="ml10">{{$t('message.adminShop.Goods.stock')}} {{ v.stock }}</span>
                       </div>
                       <div class="item-txt-msg item-txt-price">
