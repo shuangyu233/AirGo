@@ -25,10 +25,10 @@
                   </el-image>
                 </div>
                 <div class="item-txt">
-                  <div class="item-txt-title">{{ v.subject }}</div>
+                  <div style="font-size:25px" class="item-txt-title">{{ v.subject }}</div>
                   <div class="item-txt-other">
                     <div style="width: 100%">
-                      <div style="font-size:25px" class="item-txt-msg mb10">
+                      <div class="item-txt-msg mb10">
                         <span>{{$t('message.adminShop.Goods.quota')}} {{ v.quota }}</span>
                         <span class="ml10">{{$t('message.adminShop.Goods.stock')}} {{ v.stock }}</span>
                       </div>
