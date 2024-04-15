@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/ppoonk/AirGo/constant"
 	"github.com/ppoonk/AirGo/global"
@@ -22,9 +23,9 @@ import (
 )
 
 func init() {
-	err := charts.InstallFont("HarmonyOS", font_plugin.HarmonyOS_Sans_TC_Bold)
+	err := charts.InstallFont("WenQuanWeiMiHei_modify", font_plugin.WenQuanWeiMiHei_modify)
 	if err == nil {
-		font, _ := charts.GetFont("HarmonyOS")
+		font, _ := charts.GetFont("WenQuanWeiMiHei_modify")
 		charts.SetDefaultFont(font)
 	}
 }
@@ -166,7 +167,7 @@ func MessageHandlerForUser(update *tgbotapi.Update) tgbotapi.Chattable {
 			return BindTGPre(update)
 		case "解绑":
 			return UnbindTG(update)
-		case "TG ID":
+		case "获取TG ID":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, fmt.Sprintf("您的tg id：%d", update.Message.Chat.ID))
 		case "官网":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, "官网："+global.Server.Website.FrontendUrl)
@@ -195,12 +196,12 @@ func MessageHandlerForAdmin(update *tgbotapi.Update) tgbotapi.Chattable {
 			return BindTGPre(update)
 		case "解绑":
 			return UnbindTG(update)
-		case "TG ID":
+		case "获取TG ID":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, fmt.Sprintf("您的tg id：%d", update.Message.Chat.ID))
 		case "官网":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, "官网："+global.Server.Website.FrontendUrl)
 		case "查询用户":
-			return tgbotapi.NewMessage(update.Message.Chat.ID, "查询用户格式：/find xxx@qq.com")
+			return tgbotapi.NewMessage(update.Message.Chat.ID, "查询用户格式：/find xxx@email.com")
 		case "用户分析":
 			return CreateUserSummaryChart(update)
 		case "收入概览":
@@ -296,7 +297,7 @@ func BindTGPre(update *tgbotapi.Update) tgbotapi.Chattable {
 			return msg
 		}
 	}
-	msg.Text = "绑定格式：/bind xxx@qq.com|your_password"
+	msg.Text = "绑定格式：/bind xxx@email.com|your_password"
 	return msg
 }
 func BindTG(update *tgbotapi.Update) tgbotapi.Chattable {
@@ -317,21 +318,21 @@ func BindTG(update *tgbotapi.Update) tgbotapi.Chattable {
 
 	ok := EmailRegexp.MatchString(userName)
 	if !ok {
-		msg.Text = "邮箱格式错误！绑定格式：/bind xxx@qq.com|your_password"
+		msg.Text = "邮箱格式错误！绑定格式：/bind xxx@email.com|your_password"
 		return msg
 	} else {
 		user, err := userService.FirstUser(&model.User{UserName: userName})
 		if errors.Is(err, gorm.ErrRecordNotFound) {
-			msg.Text = "账户不存在！绑定格式：/bind xxx@qq.com|your_password"
+			msg.Text = "账户不存在！绑定格式：/bind xxx@email.com|your_password"
 			return msg
 		}
 		if err != nil {
-			msg.Text = "账户查询错误！绑定格式：/bind xxx@qq.com|your_password"
+			msg.Text = "账户查询错误！绑定格式：/bind xxx@email.com|your_password"
 			return msg
 		}
 		if user != nil {
 			if err = encrypt_plugin.BcryptDecode(pwd, user.Password); err != nil {
-				msg.Text = "密码错误！绑定格式：/bind xxx@qq.com|your_password"
+				msg.Text = "密码错误！绑定格式：/bind xxx@email.com|your_password"
 				return msg
 
 			}
