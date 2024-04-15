@@ -167,7 +167,7 @@ func MessageHandlerForUser(update *tgbotapi.Update) tgbotapi.Chattable {
 			return BindTGPre(update)
 		case "解绑":
 			return UnbindTG(update)
-		case "获取TG ID":
+		case "TG ID":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, fmt.Sprintf("您的tg id：%d", update.Message.Chat.ID))
 		case "官网":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, "官网："+global.Server.Website.FrontendUrl)
@@ -196,7 +196,7 @@ func MessageHandlerForAdmin(update *tgbotapi.Update) tgbotapi.Chattable {
 			return BindTGPre(update)
 		case "解绑":
 			return UnbindTG(update)
-		case "获取TG ID":
+		case "TG ID":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, fmt.Sprintf("您的tg id：%d", update.Message.Chat.ID))
 		case "官网":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, "官网："+global.Server.Website.FrontendUrl)
