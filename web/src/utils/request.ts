@@ -119,17 +119,18 @@ export function request(apiItem: ApiItem, params?: any): Promise<AxiosResponse<a
  * 获取api前缀地址
  */
 export function getApiPrefixAddress(){
-  let apiUrl = import.meta.env.VITE_API_URL;
-  if (!apiUrl) {
-    apiUrl = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port;
+  // @ts-ignore
+  let url = window.httpurl
+  if (url === null || url===''){
+    url = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port;
   }
-  return apiUrl
+  return url
 }
 
 /**
  * 需要保持session时用此方法
  */
-export function getCurrentApiPrefixAddress(){
+export function getCurrentAddress(){
     return  window.location.protocol + "//" + window.location.hostname + ":" + window.location.port;
 }
 

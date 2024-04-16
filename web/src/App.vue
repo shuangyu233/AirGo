@@ -84,14 +84,5 @@ onUnmounted(() => {
   mittBus.off('openSetingsDrawer', () => {
   });
 });
-// 监听路由的变化，设置网站标题
-// watch(
-//     () => route.path,
-//     () => {
-//       other.useTitle();
-//     },
-//     {
-//       deep: true,
-//     }
-// );
+
 </script>
