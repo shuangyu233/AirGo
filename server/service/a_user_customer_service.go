@@ -3,13 +3,14 @@ package service
 import "C"
 import (
 	"fmt"
+	"math"
+	"strings"
+	"time"
+
 	"github.com/ppoonk/AirGo/global"
 	"github.com/ppoonk/AirGo/model"
 	uuid "github.com/satori/go.uuid"
 	"gorm.io/gorm"
-	"math"
-	"strings"
-	"time"
 )
 
 type CustomerService struct{}
