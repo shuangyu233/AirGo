@@ -1,7 +1,10 @@
 package service
 
 import (
+	"C"
+
 	"errors"
+
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/ppoonk/AirGo/constant"
 	"github.com/ppoonk/AirGo/global"

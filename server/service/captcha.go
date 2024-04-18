@@ -1,6 +1,8 @@
 package service
 
 import (
+	"C"
+
 	"github.com/mojocn/base64Captcha"
 )
 

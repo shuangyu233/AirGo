@@ -1,6 +1,8 @@
 package service
 
 import (
+	"C"
+
 	"github.com/ppoonk/AirGo/global"
 	"github.com/ppoonk/AirGo/model"
 )
