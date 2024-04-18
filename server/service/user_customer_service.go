@@ -13,11 +13,11 @@ import (
 	"gorm.io/gorm"
 )
 
-type CustomerService struct{}
+type Customer1Service struct{}
 
-var CustomerServiceSvc *CustomerService
+var CustomerServiceSvc *Customer1Service
 
-func (c *CustomerService) GetCustomerServiceListByUserID(params *model.QueryParams, uID int64) (*model.CommonDataResp, error) {
+func (c *Customer1Service) GetCustomerServiceListByUserID(params *model.QueryParams, uID int64) (*model.CommonDataResp, error) {
 	var data model.CommonDataResp
 	var csArr []model.CustomerService
 	_, dataSql := CommonSqlFindSqlHandler(params)
@@ -31,28 +31,28 @@ func (c *CustomerService) GetCustomerServiceListByUserID(params *model.QueryPara
 	data.Data = csArr
 	return &data, nil
 }
-func (c *CustomerService) GetCustomerServiceList(csParams *model.CustomerService) (*[]model.CustomerService, error) {
+func (c *Customer1Service) GetCustomerServiceList(csParams *model.CustomerService) (*[]model.CustomerService, error) {
 	var csArr []model.CustomerService
 	err := global.DB.Model(&model.CustomerService{}).Where(&csParams).Find(&csArr).Error
 	return &csArr, err
 }
 
-func (c *CustomerService) FirstCustomerService(csParams *model.CustomerService) (*model.CustomerService, error) {
+func (c *Customer1Service) FirstCustomerService(csParams *model.CustomerService) (*model.CustomerService, error) {
 	var cs model.CustomerService
 	err := global.DB.Model(&model.CustomerService{}).Where(&csParams).First(&cs).Error
 	return &cs, err
 }
-func (c *CustomerService) UpdateCustomerService(id int64, values map[string]any) error {
+func (c *Customer1Service) UpdateCustomerService(id int64, values map[string]any) error {
 	return global.DB.Transaction(func(tx *gorm.DB) error {
 		return tx.Model(&model.CustomerService{ID: id}).Updates(values).Error
 	})
 }
-func (c *CustomerService) SaveCustomerService(csParams *model.CustomerService) error {
+func (c *Customer1Service) SaveCustomerService(csParams *model.CustomerService) error {
 	return global.DB.Transaction(func(tx *gorm.DB) error {
 		return tx.Save(&csParams).Error
 	})
 }
-func (c *CustomerService) CreateCustomerService(goods *model.Goods, order *model.Order) error {
+func (c *Customer1Service) CreateCustomerService(goods *model.Goods, order *model.Order) error {
 	cs := model.CustomerService{
 		UserID:          order.UserID,
 		UserName:        order.UserName,

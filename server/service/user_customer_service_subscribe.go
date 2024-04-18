@@ -17,7 +17,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-func (c *CustomerService) GetSubscribe(uuidStr string, clientType string) (string, string) {
+func (c *Customer1Service) GetSubscribe(uuidStr string, clientType string) (string, string) {
 	var nodeArr []model.Node
 	// 查找用户服务
 	subUUID, err := uuid.FromString(uuidStr)
