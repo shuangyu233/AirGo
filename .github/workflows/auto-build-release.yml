@@ -10,7 +10,7 @@ permissions:
 jobs:
   releases-matrix:
     name: Release Go Binary
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     strategy:
       matrix:
         goos: [freebsd, openbsd, linux, darwin]
