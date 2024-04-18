@@ -1,14 +1,16 @@
 package service
 
 import (
+	"C"
 	"errors"
 	"fmt"
+	"strconv"
+	"strings"
+
 	"github.com/ppoonk/AirGo/constant"
 	"github.com/ppoonk/AirGo/global"
 	"github.com/ppoonk/AirGo/model"
 	"gorm.io/gorm"
-	"strconv"
-	"strings"
 )
 
 type Finance struct {
