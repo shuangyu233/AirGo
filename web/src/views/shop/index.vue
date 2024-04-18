@@ -22,9 +22,9 @@
           <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="4" class="mb15"
                   v-for="(v, k) in shopStoreData.goodsList.value"
                   :key="k" @click="showGoodsDetails(v)">
-              <div shadow="hover" style="margin-top: 10px;border-radius:10px;background: rgba(224,224,224,0.5);padding: 20px;">
-                <div >
-                  <el-image :src="v.cover_image" lazy style="height: 100px;width: 100%" fit="cover">
+              <div shadow="hover" style="margin-top: 10px;border-radius:10px;background: rgba(224,224,224,0.5);padding: 30px;">
+                <div style="text-align: center;">
+                  <el-image :src="v.cover_image" lazy style="height: 85%;width: 85%;" fit="cover">
                     <template #error>
                       <div class="image-slot">
                         <el-icon>
@@ -61,8 +61,8 @@
             <div style="margin-top: 10px;text-align: center">
               <el-image :src="shopStoreData.currentGoods.value.cover_image"
                         lazy  
-                        style="width: 300px  ;height: 300px"
-                        fit="fit"
+                        style="width: 50%  ;height: 50%"
+                        fit="cover"
                         :preview-src-list="[shopStoreData.currentGoods.value.cover_image]">
                 <template #error>
                   <div class="image-slot">
@@ -170,6 +170,7 @@ import { useRouter } from "vue-router";
 import { useShopStore } from "/@/stores/user_logic/shopStore";
 import { storeToRefs } from "pinia";
 import { useConstantStore } from "/@/stores/constantStore";
+import { el } from "element-plus/es/locale";
 
 const shopStore = useShopStore();
 const shopStoreData = storeToRefs(shopStore);
