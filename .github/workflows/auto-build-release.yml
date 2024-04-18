@@ -10,7 +10,7 @@ permissions:
 jobs:
   releases-matrix:
     name: Release Go Binary
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         goos: [freebsd, openbsd, linux, darwin]
@@ -47,9 +47,8 @@ jobs:
 
       - name: Build web
         run: |
-          brew install gnu-sed
           cd web
-          gsed -i 's/old-version/${{ steps.get_version.outputs.VERSION }}/g' ./src/layout/footer/index.vue
+          sed -i 's/old-version/${{ steps.get_version.outputs.VERSION }}/g' ./src/layout/footer/index.vue
           npm install
           npm run build
           rm -rf ../server/web/web
@@ -58,10 +57,10 @@ jobs:
       - name: Set version
         run: |
           cd server
-          gsed -i 's/old-version/${{ steps.get_version.outputs.VERSION }}/g' ./constant/index.go
+          sed -i 's/old-version/${{ steps.get_version.outputs.VERSION }}/g' ./constant/index.go
 
       - name: Build server
-        uses: wangyoucao577/go-release-action@v1.49
+        uses: wangyoucao577/go-release-action@v1
         with:
           github_token: ${{ secrets.ACTION_TOKEN }}
           goos: ${{ matrix.goos }}
