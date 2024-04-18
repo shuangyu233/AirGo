@@ -60,8 +60,8 @@
           <div style="border-radius:10px;background: rgba(224,224,224,0.29);padding: 10px">
             <div style="margin-top: 10px;text-align: center">
               <el-image :src="shopStoreData.currentGoods.value.cover_image"
-                        lazy
-                        style="height: 150px"
+                        lazy  
+                        style="width: 300px  ;height: 300px"
                         fit="cover"
                         :preview-src-list="[shopStoreData.currentGoods.value.cover_image]">
                 <template #error>
