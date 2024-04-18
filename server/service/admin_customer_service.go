@@ -1,8 +1,6 @@
 package service
 
 import (
-	"C"
-
 	"time"
 
 	"github.com/ppoonk/AirGo/global"

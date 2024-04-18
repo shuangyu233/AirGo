@@ -1,8 +1,6 @@
 package service
 
 import (
-	"C"
-
 	"fmt"
 
 	"github.com/ppoonk/AirGo/constant"

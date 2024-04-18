@@ -1,8 +1,6 @@
 package service
 
 import (
-	"C"
-
 	"context"
 	"errors"
 	"fmt"

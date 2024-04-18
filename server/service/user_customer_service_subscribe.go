@@ -1,7 +1,6 @@
 package service
 
 import (
-	"C"
 	"bytes"
 	"encoding/base64"
 	"encoding/json"

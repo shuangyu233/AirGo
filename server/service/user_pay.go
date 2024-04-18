@@ -1,8 +1,6 @@
 package service
 
 import (
-	"C"
-
 	"strconv"
 
 	"github.com/ppoonk/AirGo/global"

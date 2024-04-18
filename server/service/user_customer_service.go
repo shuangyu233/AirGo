@@ -1,7 +1,6 @@
 package service
 
 import (
-	"C"
 	"fmt"
 	"math"
 	"strings"
