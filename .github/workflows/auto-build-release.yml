@@ -47,6 +47,7 @@ jobs:
 
       - name: Build web
         run: |
+          brew install gnu-sed
           cd web
           sed -i 's/old-version/${{ steps.get_version.outputs.VERSION }}/g' ./src/layout/footer/index.vue
           npm install
