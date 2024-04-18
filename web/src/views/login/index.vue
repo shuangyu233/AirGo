@@ -125,7 +125,7 @@ onMounted(() => {
         height: 52px;
       }
 
-      .login-left-logo-text {
+      .login-left-logo-text { //logo
         display: flex;
         flex-direction: column;
         width: 400px;
@@ -133,12 +133,14 @@ onMounted(() => {
         span {
           margin-left: 10px;
           font-size: 28px;
-          color: #000000; //标题颜色
+          color: #ffffff; //标题颜色
+          text-shadow: #000000b8 1px 0 10px;
         }
 
         .login-left-logo-text-msg {
           font-size: 12px;
-          color: rgba(134, 109, 109, 0.99); //副标题颜色
+          color: #ffffff; //副标题颜色
+          text-shadow: #000000b8 1px 0 10px;
         }
       }
     }

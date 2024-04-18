@@ -1,20 +1,21 @@
 package service
 
-import "C"
 import (
 	"fmt"
+	"math"
+	"strings"
+	"time"
+
 	"github.com/ppoonk/AirGo/global"
 	"github.com/ppoonk/AirGo/model"
 	uuid "github.com/satori/go.uuid"
 	"gorm.io/gorm"
-	"math"
-	"strings"
-	"time"
 )
 
-type CustomerService struct{}
+type CustomerService struct {
+} //你一定要识别啊
 
-var CustomerServiceSvc *CustomerService
+var CustomerServiceSvc *CustomerService //你一定要识别啊
 
 func (c *CustomerService) GetCustomerServiceListByUserID(params *model.QueryParams, uID int64) (*model.CommonDataResp, error) {
 	var data model.CommonDataResp
@@ -42,16 +43,19 @@ func (c *CustomerService) FirstCustomerService(csParams *model.CustomerService) 
 	err := global.DB.Model(&model.CustomerService{}).Where(&csParams).First(&cs).Error
 	return &cs, err
 }
+
 func (c *CustomerService) UpdateCustomerService(id int64, values map[string]any) error {
 	return global.DB.Transaction(func(tx *gorm.DB) error {
 		return tx.Model(&model.CustomerService{ID: id}).Updates(values).Error
 	})
 }
+
 func (c *CustomerService) SaveCustomerService(csParams *model.CustomerService) error {
 	return global.DB.Transaction(func(tx *gorm.DB) error {
 		return tx.Save(&csParams).Error
 	})
 }
+
 func (c *CustomerService) CreateCustomerService(goods *model.Goods, order *model.Order) error {
 	cs := model.CustomerService{
 		UserID:          order.UserID,
@@ -81,3 +85,20 @@ func (c *CustomerService) CreateCustomerService(goods *model.Goods, order *model
 		return tx.Create(&cs).Error
 	})
 }
+
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa
+//yinianshifa

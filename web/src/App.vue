@@ -5,6 +5,7 @@
     <CloseFull v-if="!themeConfig.isLockScreen"/>
 
   </el-config-provider>
+  
 </template>
 
 <script setup lang="ts" name="app">

@@ -50,6 +50,7 @@ declare interface Alipay {
 declare interface Epay {
   epay_pid: number;
   epay_key: string;
+  epay_main_url: string;
   epay_api_url: string;
   epay_return_url: string;
   epay_notify_url: string;
