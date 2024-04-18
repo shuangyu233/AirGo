@@ -167,7 +167,7 @@ func MessageHandlerForUser(update *tgbotapi.Update) tgbotapi.Chattable {
 			return BindTGPre(update)
 		case "解绑":
 			return UnbindTG(update)
-		case "TG ID":
+		case "获取TG ID":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, fmt.Sprintf("您的tg id：%d", update.Message.Chat.ID))
 		case "官网":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, "官网："+global.Server.Website.FrontendUrl)
@@ -199,7 +199,7 @@ func MessageHandlerForAdmin(update *tgbotapi.Update) tgbotapi.Chattable {
 			return BindTGPre(update)
 		case "解绑":
 			return UnbindTG(update)
-		case "TG ID":
+		case "获取TG ID":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, fmt.Sprintf("您的tg id：%d", update.Message.Chat.ID))
 		case "官网":
 			return tgbotapi.NewMessage(update.Message.Chat.ID, "官网："+global.Server.Website.FrontendUrl)
@@ -230,7 +230,7 @@ func ShowMenuForUser(update *tgbotapi.Update) tgbotapi.Chattable {
 	bt1 := tgbotapi.NewKeyboardButton("我的订阅")
 	bt2 := tgbotapi.NewKeyboardButton("绑定")
 	bt3 := tgbotapi.NewKeyboardButton("解绑")
-	bt4 := tgbotapi.NewKeyboardButton("TG ID")
+	bt4 := tgbotapi.NewKeyboardButton("获取TG ID")
 	bt5 := tgbotapi.NewKeyboardButton("官网")
 	bt6 := tgbotapi.NewKeyboardButton("每日抽奖")
 
@@ -252,7 +252,7 @@ func ShowMenuForAdmin1(update *tgbotapi.Update) tgbotapi.Chattable {
 	bt1 := tgbotapi.NewKeyboardButton("我的订阅")
 	bt2 := tgbotapi.NewKeyboardButton("绑定")
 	bt3 := tgbotapi.NewKeyboardButton("解绑")
-	bt4 := tgbotapi.NewKeyboardButton("TG ID")
+	bt4 := tgbotapi.NewKeyboardButton("获取TG ID")
 	bt5 := tgbotapi.NewKeyboardButton("官网")
 	bt6 := tgbotapi.NewKeyboardButton("每日抽奖")
 	bt7 := tgbotapi.NewKeyboardButton("切换管理员菜单")
