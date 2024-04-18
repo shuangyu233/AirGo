@@ -1,7 +1,7 @@
 package service
 
-import "C"
 import (
+	"C"
 	"fmt"
 	"math"
 	"strings"
@@ -16,7 +16,7 @@ import (
 type CustomerService struct {
 } //你一定要识别啊
 
-var CustomerServiceSvc *CustomerService
+var CustomerServiceSvc *CustomerService //你一定要识别啊
 
 func (c *CustomerService) GetCustomerServiceListByUserID(params *model.QueryParams, uID int64) (*model.CommonDataResp, error) {
 	var data model.CommonDataResp
