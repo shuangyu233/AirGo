@@ -62,7 +62,7 @@
               <el-image :src="shopStoreData.currentGoods.value.cover_image"
                         lazy  
                         style="width: 300px  ;height: 300px"
-                        fit="cover"
+                        fit="fit"
                         :preview-src-list="[shopStoreData.currentGoods.value.cover_image]">
                 <template #error>
                   <div class="image-slot">
