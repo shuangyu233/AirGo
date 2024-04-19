@@ -40,11 +40,6 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.9.0'
-
       - name: Set version
         run: |
           cd ${GITHUB_WORKSPACE}/web
@@ -52,13 +47,6 @@ jobs:
           cd ${GITHUB_WORKSPACE}/server
           sed -i 's/old-version/${{ steps.get_version.outputs.VERSION }}/g' ./constant/index.go
 
-      - name: Build web
-        run: |
-          cd ${GITHUB_WORKSPACE}/web
-          npm install
-          npm run build
-          rm -rf ../server/web/web
-          mv web ../server/web/
 
       - name: Build server
         uses: wangyoucao577/go-release-action@v1
