@@ -2,15 +2,14 @@ package router
 
 import (
 	"crypto/tls"
-	"github.com/fvbock/endless"
-	"github.com/gin-gonic/gin"
-	"github.com/ppoonk/AirGo/global"
-	middleware "github.com/ppoonk/AirGo/router/middleware"
-	"github.com/ppoonk/AirGo/web"
 	"io"
 	"os"
 	"strconv"
 	"sync"
+
+	"github.com/fvbock/endless"
+	"github.com/gin-gonic/gin"
+	"github.com/ppoonk/AirGo/global"
 )
 
 type GinRouter struct {
@@ -35,9 +34,6 @@ func (g *GinRouter) InitRouter() {
 	}
 	gin.DefaultWriter = writer
 	g.Router = gin.Default()
-	// targetPtah=web 是embed和web文件夹的相对路径
-	g.Router.Use(middleware.Serve("/", middleware.EmbedFolder(web.Static, "web")))
-	g.Router.Use(middleware.Cors(), middleware.Recovery())
 
 	//api路由
 	apiRouter := g.Router.Group("/api")
