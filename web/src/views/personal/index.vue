@@ -132,7 +132,6 @@
           @start="startCallback"
           @end="endCallback"
         />
-        <div id="my-lucky"></div>
       </el-dialog>
     </div>
 
@@ -448,9 +447,10 @@ const onSubmitForNotice = () => {
 
 .dialog {
   :deep(.el-dialog) {
+    box-shadow: 0 0px 0px rgb(0 0 0 / 0%);
     background: transparent;
     //.el-dialog__body {
-    //  //padding: 0 !important;
+    //  padding: 0 !important;
     //}
     //.el-dialog__header {
     //  display: none !important;
