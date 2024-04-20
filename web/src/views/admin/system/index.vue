@@ -4,6 +4,15 @@
       <el-tabs stretch style="height: 100%" @tab-change="tap" v-model="state.currentTapName">
         <el-tab-pane :label="$t('message.adminServer.tabWebsite')" name="1">
           <el-row style="margin-bottom: 20px">
+            <el-col>
+              <div>
+                <el-icon style="margin-right: 4px" :size="12">
+                  <InfoFilled />
+                </el-icon>
+                {{$t('message.adminServer.Server.current_web_version')}}
+              </div>
+              <div style="font-size: 20px">v0.2.8 build1001</div>
+            </el-col>
             <el-col :span="12">
               <div>
                 <el-icon style="margin-right: 4px" :size="12">

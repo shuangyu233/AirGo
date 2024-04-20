@@ -20,8 +20,9 @@ export default {
      created_at: "created at",
      updated_at: "updated at",
      //website
-     current_version:"current version",
-     latest_version:"latest version",
+     current_version:"current core version",
+     current_web_version:"current web version",
+     latest_version:"AirGo latest version",
      starting_upgrade:"starting upgrade",
      is_latest:"Currently, it is the latest version",
      upgrade_warning:"Upgrading carries risks, please backup your data properly!",

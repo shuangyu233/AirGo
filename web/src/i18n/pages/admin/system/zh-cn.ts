@@ -20,8 +20,9 @@ export default {
       created_at: "创建时间",
       updated_at: "更新时间",
       //website
-      current_version:"当前版本",
-      latest_version:"最新版本",
+      current_version:"当前内核版本",
+      current_web_version:"当前前端版本",
+      latest_version:"最新AirGo版本",
       starting_upgrade:"开始升级",
       is_latest:"当前已是最新版本",
       upgrade_warning:"升级有风险，请做好数据备份!",
