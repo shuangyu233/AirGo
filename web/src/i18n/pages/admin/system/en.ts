@@ -21,7 +21,8 @@ export default {
      updated_at: "updated at",
      //website
      current_version:"current core version",
-     current_web_version:"current web version",
+     website_local_deploy_time:"website local deploy time",
+     web_version_note:"> Click me to view the reference time of each version <",
      latest_version:"AirGo latest version",
      starting_upgrade:"starting upgrade",
      is_latest:"Currently, it is the latest version",

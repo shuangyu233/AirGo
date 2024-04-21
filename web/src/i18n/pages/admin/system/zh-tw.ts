@@ -21,7 +21,8 @@ export default {
       updated_at: "更新時間",
       //website
       current_version:"當前內核版本",
-      current_web_version:"當前前端版本",
+      website_local_deploy_time:"前端本地部署時間",
+      web_version_note:"> 點我看各版本參考時間 <",
       latest_version:"最新AirGo版本",
       starting_upgrade:"開始陞級",
       is_latest:"當前已是最新版本",
