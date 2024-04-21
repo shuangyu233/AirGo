@@ -26,6 +26,7 @@
 		"jsencrypt": "^3.3.2",
 		"lucky-canvas": "^1.7.27",
 		"mitt": "^3.0.0",
+		"moment": "^2.30.1",
 		"nprogress": "^0.2.0",
 		"pinia": "^2.0.33",
 		"qrcodejs2-fixes": "^0.0.2",

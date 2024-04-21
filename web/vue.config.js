@@ -3,7 +3,7 @@ const versionJSON = {
     "compileTime": new Date().getTime()
 }
 
-fs.writeFile("./src/utils/versionJSON.json", JSON.stringify(versionJSON), (err)=>{
+fs.writeFile("../src/utils/versionJSON.json", JSON.stringify(versionJSON), (err)=>{
     console.log('deploy time write sucess.');
 })
 
