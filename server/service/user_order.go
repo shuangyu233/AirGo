@@ -514,7 +514,7 @@ func (o *Order) GetUserTotalConsumptionAmount(uID int64) (float64, error) {
 	var totalConsumption float64
 	err := global.DB.
 		Model(&model.Order{}).
-		Where("user_id = ? AND pay_type in ? AND trade_status = TRADE_SUCCESS", uID, []string{constant.PAY_TYPE_ALIPAY, constant.PAY_TYPE_EPAY}).
+		Where("user_id = ? AND pay_type in ? AND trade_status = ?", uID, []string{constant.PAY_TYPE_ALIPAY, constant.PAY_TYPE_EPAY, constant.ORDER_STATUS_TRADE_SUCCESS}).
 		Select("total_amount").
 		Find(&list).Error
 	if err != nil {
