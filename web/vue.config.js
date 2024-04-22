@@ -1,12 +1,10 @@
-const fs = require('fs');
+import { writeFile } from 'fs';
 const versionJSON = {
     "compileTime": new Date().getTime()
 }
 
-fs.writeFile("../src/utils/versionJSON.json", JSON.stringify(versionJSON), (err)=>{
+writeFile("./src/versionJSON.airgo",versionJSON,(err) => {
+    if (err) throw err;
     console.log('deploy time write sucess.');
-})
+  })
 
-module.exports = {
-
-}
