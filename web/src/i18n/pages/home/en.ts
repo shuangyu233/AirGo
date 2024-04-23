@@ -1,7 +1,6 @@
 export default {
   home: {
-    no_data:"There is currently no data available",
-
+    no_data:"You haven't purchased a package subscription yet, please go to the store to purchase one! Please check the usage documentation before use,and if you have any questions, please submit a work order",
     button_push:"PUSH",
     button_details:"Details",
     button_renew:"Renew",
