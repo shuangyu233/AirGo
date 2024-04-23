@@ -1,7 +1,7 @@
 <template>
   <div class="layout-logo" v-if="setShowLogo" @click="onThemeConfigChange">
-    <img :src="themeConfig.logo_link" class="layout-logo-medium-img"/>
-    <span>{{ themeConfig.globalTitle }}</span>
+    <img src="https://ice.frostsky.com/2024/04/18/ce4e25e3c537d088b8799a3403f2aede.png"  class="layout-logo-medium-img" style="width: 60%"/>
+
   </div>
   <div class="layout-logo-size" v-else @click="onThemeConfigChange">
     <img :src="themeConfig.logo_link" class="layout-logo-size-img"/>
