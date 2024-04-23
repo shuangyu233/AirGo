@@ -28,7 +28,7 @@ export const NextLoading = {
                     <h3></h3>
                     <h3>loading...</h3>
                     <h3>tg群组:</h3>
-                    <he>:<a href="https://t.me/FYLink_Group">https://t.me/FYLink_Group</a></h3>
+                    <he><a href="https://t.me/FYLink_Group">https://t.me/FYLink_Group</a></h3>
 				</div>
 
 			</div>
