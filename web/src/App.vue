@@ -21,6 +21,8 @@ import setIntroduction from '/@/utils/setIconfont';
 import {useUserStore} from "/@/stores/user_logic/userStore";
 import { usePublicStore } from "/@/stores/publicStore";
 import { useI18n } from 'vue-i18n';
+import echarts from 'echarts'
+
 
 // 引入组件
 const Setings = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/setings.vue'));

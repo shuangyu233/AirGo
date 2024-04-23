@@ -4,12 +4,14 @@
       <div class="login-left-logo" style="">
           <img :src="themeConfig.logo_link"/>
           <div class="login-left-logo-text">
-            <span>{{ getThemeConfig.globalViceTitle }}</span>
+            <span class="">{{ getThemeConfig.globalViceTitle }}</span>
+            <h1 class="animate__animated animate__bounce">An animated element</h1>
+
             <span class="login-left-logo-text-msg">{{ getThemeConfig.globalViceTitleMsg }}</span>
           </div>
       </div>
     </div>
-    <div class="login-right flex">
+    <div class="login-right flex" >
       <div class="login-right-warp flex-margin">
         <div class="login-right-warp-mian">
           <div class="login-right-warp-main-title">
@@ -118,8 +120,7 @@ onMounted(() => {
       top: 30px;
       left: 30px;
       z-index: 1;
-      animation: logoAnimation 0.3s ease;
-
+      
       img {
         width: 52px;
         height: 52px;
@@ -153,9 +154,11 @@ onMounted(() => {
     margin-right: 35%;
 
     .login-right-warp {
-      border: 1px solid var(--el-color-primary-light-3); //表单边框
-      border-radius: 3px;
+      //border: 1px solid var(--el-color-primary-light-3);
+      box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.486);
+      border-radius: 7px;
       width: 100%;
+      
       //height: 500px; //表单高度
       position: relative;
       overflow: hidden;
