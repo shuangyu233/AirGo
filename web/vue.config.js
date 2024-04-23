@@ -1,10 +1,12 @@
-import { writeFile } from 'fs';
+const fs = require('fs');
 const versionJSON = {
     "compileTime": new Date().getTime()
 }
 
-writeFile("./src/utills/versionJSON.json",versionJSON,(err) => {
-    if (err) throw err;
-    console.log('deploy time write sucess.');
-  })
+fs.writeFile("./src/utils/versionJSON.json", JSON.stringify(versionJSON), (err)=>{
+    console.log('文件写入成功');
+})
 
+module.exports = {
+
+}
