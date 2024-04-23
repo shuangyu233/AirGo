@@ -653,27 +653,19 @@ onMounted(() => {
 
 
 <script lang='ts'>        //读取前端本地部署时间
-    readTestFile() {
-      const file = this.loadFile('other/test.vue');
-      console.info(file);
-      console.log(this.unicodeToUtf8(file));
-      this.data = this.unicodeToUtf8(file);
-    },
-    // 读取文件
-    loadFile(name) {
-      const xhr = new XMLHttpRequest();
-      const okStatus = document.location.protocol === 'file:' ? 0 : 200;
-      xhr.open('GET', name, false);
-      xhr.overrideMimeType('text/html;charset=utf-8');
-      // 默认为utf-8
-      xhr.send(null);
-      return xhr.status === okStatus ? xhr.responseText : null;
-    },
-    // unicode转utf-8
-    unicodeToUtf8(data) {
-      data = data.replace(/\\/g, '%');
-      return unescape(data);
-    }
+import versionJSON from "/src/utils/versionJSON.json";    
+import moment from "moment";
+export default {
+  data(){
+      return {
+          compileTime: ''
+      }
+  },
+  mounted(){
+      console.log(versionJSON)
+      this.compileTime = versionJSON
+  }
+}
 </script>
 
 <style lang="scss">

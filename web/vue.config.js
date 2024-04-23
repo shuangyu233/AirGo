@@ -3,7 +3,7 @@ const versionJSON = {
     "compileTime": new Date().getTime()
 }
 
-writeFile("./src/versionJSON.airgo",versionJSON,(err) => {
+writeFile("./src/utills/versionJSON.json",versionJSON,(err) => {
     if (err) throw err;
     console.log('deploy time write sucess.');
   })
