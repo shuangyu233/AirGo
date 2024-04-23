@@ -68,7 +68,7 @@
 		"url": "https://gitee.com/lyt-top/vue-next-admin/issues"
 	},
 	"engines": {
-		"node": ">=16.0.0",
+		"node": ">=20.0.0",
 		"npm": ">= 7.0.0"
 	},
 	"keywords": [
