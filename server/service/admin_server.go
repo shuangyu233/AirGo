@@ -130,7 +130,7 @@ func (s *AdminServer) DownloadLatestVersion(ctx *gin.Context) error {
 	if err != nil {
 		return err
 	}
-	if tempFileInfo.Size() < 40000000 {
+	if tempFileInfo.Size() < 30000000 {
 		//v0.2.1版本是49697040，太小说明有问题
 		return err
 	}
