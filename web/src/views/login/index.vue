@@ -5,8 +5,6 @@
           <img :src="themeConfig.logo_link"/>
           <div class="login-left-logo-text">
             <span class="">{{ getThemeConfig.globalViceTitle }}</span>
-            <h1 class="animate__animated animate__bounce">An animated element</h1>
-
             <span class="login-left-logo-text-msg">{{ getThemeConfig.globalViceTitleMsg }}</span>
           </div>
       </div>
