@@ -35,7 +35,7 @@ export default {
     lastThreeMonths:"Last 3 months",
     month:"month",
 
-    noData:"No data",
+    noData:"You haven't purchased a package subscription yet, please go to the store to purchase one! Please check the usage documentation before use,and if you have any questions, please submit a work order",
 
     success:"Success",
     warning:"Warning",

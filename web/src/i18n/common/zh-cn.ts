@@ -35,7 +35,7 @@ export default {
     lastThreeMonths:"最近3个月",
     month:"月",
 
-    noData:"暂无数据",
+    noData:"你还没有购买套餐订阅，请至商店购买！使用前请先查看使用文档，有问题请上报工单",
 
     success:"成功",
     warning:"警告",
