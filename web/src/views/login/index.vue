@@ -1,11 +1,11 @@
 <template>
   <div class="login-container flex">
     <div class="login-left">
-      <div class="login-left-logo" style="">
-          <img :src="themeConfig.logo_link"/>
+      <div class="login-left-logo" style="text-shadow: #000000 0px 0 3px;">
+          <img src="https://ice.frostsky.com/2024/03/23/f9c5cb33538da41e490d98e6051ee556.png"/>
           <div class="login-left-logo-text">
-            <span class="">{{ getThemeConfig.globalViceTitle }}</span>
-            <span class="login-left-logo-text-msg">{{ getThemeConfig.globalViceTitleMsg }}</span>
+            <span class="">風嶼Link</span>
+            <span class="login-left-logo-text-msg">「正在不断进化中...」</span>
           </div>
       </div>
     </div>

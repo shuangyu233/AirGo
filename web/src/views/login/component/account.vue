@@ -296,4 +296,5 @@ const onLanguageChange = (lang: string) => {
   .login-content-resetPassword {
     width: 100%;
   }
+
 }</style>
