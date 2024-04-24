@@ -1,36 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-    <defs>
-        <radialGradient id="Gradient1" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
-            <animate attributeName="fx" dur="34s" values="0%;10%;0%" repeatCount="indefinite" />
-            <stop offset="0%" stop-color="rgba(255, 0, 255, 1)" />
-            <stop offset="100%" stop-color="rgba(255, 0, 255, 0)" />
-        </radialGradient>
-        <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
-            <animate attributeName="fx" dur="23.5s" values="0%;50%;0%" repeatCount="indefinite" />
-            <stop offset="0%" stop-color="rgba(255, 255, 0, 1)" />
-            <stop offset="100%" stop-color="rgba(255, 255, 0, 0)" />
-        </radialGradient>
-        <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
-            <animate attributeName="fx" dur="23.5s" values="0%;10%;0%" repeatCount="indefinite" />
-            <stop offset="0%" stop-color="rgba(0, 255, 255, 1)" />
-            <stop offset="100%" stop-color="rgba(0, 255, 255, 0)" />
-        </radialGradient>
-    </defs>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="1080" preserveAspectRatio="none" viewBox="0 0 1920 1080"><g mask="url(&quot;#SvgjsMask1033&quot;)" fill="none"><rect width="1920" height="1080" x="0" y="0" fill="#0e2a47"></rect><path d="M1874.061,1010.502C1917.323,1010.034,1955.392,984.746,1977.526,947.571C2000.233,909.433,2005.094,863.334,1985.355,823.579C1963.164,778.885,1923.933,740.856,1874.061,739.19C1821.743,737.442,1772.874,769.053,1749.095,815.687C1727.136,858.753,1740.542,909.165,1766.642,949.854C1790.437,986.949,1829.993,1010.979,1874.061,1010.502" fill="rgba(28, 83, 142, 0.4)" class="triangle-float3"></path><path d="M398.6483634145889 811.0026957598943L284.91766108139075 701.1742331658002 177.04031835684862 926.6845179626446z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float3"></path><path d="M1084.75 279.38 a315.51 315.51 0 1 0 631.02 0 a315.51 315.51 0 1 0 -631.02 0z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float1"></path><path d="M191.993,1082.719C260.983,1079.347,308.323,1022.165,343.653,962.813C380.122,901.548,411.694,830.559,380.16,766.614C345.612,696.558,270.1,656.109,191.993,655.279C112.417,654.434,35.396,692.962,-3.229,762.54C-40.862,830.331,-28.087,912.81,12.278,979.011C50.869,1042.304,117.951,1086.338,191.993,1082.719" fill="rgba(28, 83, 142, 0.4)" class="triangle-float1"></path><path d="M1949.0138055986354 368.20600949253367L2026.4806828565079 216.16870235755465 1874.443375721529 138.70182509968205 1796.9764984636563 290.73913223466104z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float2"></path><path d="M1471.319,67.488C1510.363,68.54,1534.923,30.393,1554.585,-3.355C1574.437,-37.431,1595.719,-77.714,1575.714,-111.701C1555.866,-145.421,1510.338,-147.73,1471.319,-144.816C1438.128,-142.337,1406.943,-127.022,1390.839,-97.894C1375.218,-69.639,1381.353,-36.673,1395.48,-7.642C1412.169,26.652,1433.194,66.461,1471.319,67.488" fill="rgba(28, 83, 142, 0.4)" class="triangle-float3"></path><path d="M340.5955764204025 55.55444904290165L236.1122506600596 260.61452183026756 545.6556492077684 160.03777480324453z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float3"></path><path d="M1131.434,1079.106C1207.041,1077.278,1266.64,1024.121,1306.213,959.671C1348.205,891.281,1379.516,808.174,1341.027,737.753C1301.392,665.237,1214.034,642.505,1131.434,639.891C1042.709,637.084,941.979,646.878,897.535,723.72C853.055,800.623,892.536,894.281,941.377,968.491C984.569,1034.117,1052.893,1081.005,1131.434,1079.106" fill="rgba(28, 83, 142, 0.4)" class="triangle-float1"></path><path d="M616.9133911535669 779.6748286746732L850.5204156047496 821.0956430046091 782.999376552123 625.0003069159966z" fill="rgba(28, 83, 142, 0.4)" class="triangle-float2"></path></g><defs><mask id="SvgjsMask1033"><rect width="1920" height="1080" fill="#ffffff"></rect></mask><style>
+                @keyframes float1 {
+                    0%{transform: translate(0, 0)}
+                    50%{transform: translate(-10px, 0)}
+                    100%{transform: translate(0, 0)}
+                }
 
-    <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
-        <animate attributeName="x" dur="20s" values="0%;25%;0%" repeatCount="indefinite" />
-        <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
-        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s" repeatCount="indefinite" />
-    </rect>
-    <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
-        <animate attributeName="x" dur="23s" values="0%;-25%;0%" repeatCount="indefinite" />
-        <animate attributeName="y" dur="24s" values="0%;-25%;0%" repeatCount="indefinite" />
-        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s" repeatCount="indefinite" />
-    </rect>
-    <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
-        <animate attributeName="x" dur="25s" values="0%;-25%;0%" repeatCount="indefinite" />
-        <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
-        <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s" repeatCount="indefinite" />
-    </rect>
+                .triangle-float1 {
+                    animation: float1 5s infinite;
+                }
 
-</svg>
+                @keyframes float2 {
+                    0%{transform: translate(0, 0)}
+                    50%{transform: translate(-5px, -5px)}
+                    100%{transform: translate(0, 0)}
+                }
+
+                .triangle-float2 {
+                    animation: float2 4s infinite;
+                }
+
+                @keyframes float3 {
+                    0%{transform: translate(0, 0)}
+                    50%{transform: translate(0, -10px)}
+                    100%{transform: translate(0, 0)}
+                }
+
+                .triangle-float3 {
+                    animation: float3 6s infinite;
+                }
+            </style></defs></svg>
