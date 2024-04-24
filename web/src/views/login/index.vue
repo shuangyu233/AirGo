@@ -1,7 +1,7 @@
 <template>
   <div class="login-container flex">
     <div class="login-left">
-      <div class="login-left-logo" style="">
+      <div class="login-left-logo" style="text-shadow: #000000 0px 0 3px;">
           <img :src="themeConfig.logo_link"/>
           <div class="login-left-logo-text">
             <span>{{ getThemeConfig.globalViceTitle }}</span>
@@ -214,7 +214,7 @@ onMounted(() => {
   color: rgba(255, 255, 255, 0.777);
 }
 .el-link__inner{
-  color: rgba(255, 255, 255, 0.400);
+  color: rgb(255, 255, 255);
 }
 .el-input__wrapper{
   background-color: transparent;
