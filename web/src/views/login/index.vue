@@ -214,11 +214,12 @@ onMounted(() => {
   color: rgba(255, 255, 255, 0.777);
 }
 .el-link__inner{
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.400);
 }
 .el-input__wrapper{
   background-color: transparent;
 }
-
-
+.el-input__inner{
+  color: white;
+}
 </style>
