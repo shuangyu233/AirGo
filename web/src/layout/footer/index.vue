@@ -1,10 +1,9 @@
 <template>
   <div class="layout-footer pb15">
     <div class="layout-footer-warp">
-      <div class="mt5">
-        <el-link herf="https://github.com/shuangyu233/AirGo">Version 0.2.8_modify2</el-link>
-        <span> | </span>
-        <el-link herf="https://fylink.free.hr">By {{ themeConfig.globalTitle }}</el-link>
+      <div class="mt5">    
+        <span>@風嶼Link「正在不断进化中...」| </span>
+        <span> build:2024/4/25</span>
       </div>
     </div>
   </div>
