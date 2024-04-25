@@ -26,8 +26,8 @@ export const NextLoading = {
 					<div class="loading-next-box-item"></div>
                     <div>
                           <h3>  </h3>
-                         <h3>loading...</h3>
-                         <h3>tg群组:</h3>
+                         <h3>loading...目前网站上游出现问题</h3>
+                         <h3>有问题请至tg群组:</h3>
                          <he><a href="https://t.me/FYLink_Group">https://t.me/FYLink_Group</a></h3>
                     <div>
 				</div>
