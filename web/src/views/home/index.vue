@@ -8,7 +8,7 @@
       </el-card>
     </div>
     <el-card style="background-color:transparent;">
-        <h2>欢迎使用風嶼Link～使用前请查看使用文档，tg群组:<a href="https://t.me/FYLink_Group">https://t.me/FYLink_Group</a></h2>
+        <h2>欢迎使用風嶼Link‍(=・ω・=)～ 使用前请查看使用文档，tg群组:<a href="https://t.me/FYLink_Group">https://t.me/FYLink_Group</a></h2>
       </el-card>
       <br>
     <el-row :gutter="15">
