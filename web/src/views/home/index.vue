@@ -7,9 +7,10 @@
         <h2>{{$t('message.home.no_data')}}</h2>
       </el-card>
     </div>
-    <el-card>
-        <h2>欢迎使用fylink～</h2>
+    <el-card style="background-color:transparent;">
+        <h2>欢迎使用風嶼Link～使用前请查看使用文档，tg群组:<a href="https://t.me/FYLink_Group">https://t.me/FYLink_Group</a></h2>
       </el-card>
+      <br>
     <el-row :gutter="15">
       <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12"
               v-for="(v, k) in customerServiceStoreData.customerServiceList.value" :key="k">
