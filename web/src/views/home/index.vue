@@ -7,9 +7,11 @@
         <h2>{{$t('message.home.no_data')}}</h2>
       </el-card>
     </div>
+    <div>
     <el-card style="background-color:transparent;">
-        <h2>欢迎使用風嶼Link‍(=・ω・=)～ 使用前请查看使用文档，tg群组:<a href="https://t.me/FYLink_Group">https://t.me/FYLink_Group</a></h2>
+        <h2>欢迎使用風嶼Link‍(=・ω・=)～ <br>使用前请查看<a href="/#/documents">使用文档</a>，<a href="https://t.me/FYLink_Group">点我加入tg群组</a></h2>
       </el-card>
+    </div>
       <br>
     <el-row :gutter="15">
       <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12"
