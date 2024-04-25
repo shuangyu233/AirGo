@@ -3,6 +3,8 @@ package app
 import (
 	"errors"
 	"fmt"
+	"strings"
+
 	gormadapter "github.com/casbin/gorm-adapter/v3"
 	"github.com/gin-gonic/gin"
 	"github.com/glebarez/sqlite"
@@ -13,7 +15,6 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
-	"strings"
 )
 
 type DataBase struct {
@@ -181,6 +182,7 @@ func (d *DataBase) InsertIntoMenu() error {
 		{ID: 16, ParentID: 0, Remarks: "文档", Path: "/documents", Name: "documents", Component: "/documents/index.vue", Meta: model.Meta{Title: "message.router.documents", Icon: "ele-ChatLineSquare"}},
 		{ID: 17, ParentID: 0, Remarks: "工单", Path: "/ticket", Name: "ticket", Component: "/ticket/index.vue", Meta: model.Meta{Title: "message.router.ticket", Icon: "ele-DocumentRemove"}},
 		{ID: 18, ParentID: 0, Remarks: "财务中心", Path: "/finance", Name: "finance", Component: "/finance/index.vue", Meta: model.Meta{Title: "message.router.finance", Icon: "ele-Box"}},
+		{ID: 19, ParentID: 0, Remarks: "体验中心", Path: "/experience", Name: "experience", Component: "/experience/index.vue", Meta: model.Meta{Title: "message.router.experience", Icon: "ele-Box"}},
 	}
 	if err := global.DB.Create(&DynamicRouteData).Error; err != nil {
 		return errors.New("sys_dynamic-router_data表数据初始化失败!")
@@ -235,6 +237,7 @@ func (d *DataBase) InsertIntoRoleAndMenu() error {
 		{RoleID: 2, MenuID: 16},
 		{RoleID: 2, MenuID: 17},
 		{RoleID: 2, MenuID: 18},
+		{RoleID: 2, MenuID: 19},
 	}
 	if err := global.DB.Create(&roleAndMenuData).Error; err != nil {
 		return errors.New("role_and_menu表数据初始化失败!")
