@@ -7,6 +7,9 @@
   </el-config-provider>
   
 </template>
+<style>
+
+</style>
 
 <script setup lang="ts" name="app">
 import {computed, defineAsyncComponent, nextTick, onBeforeMount, onMounted, onUnmounted, ref, watch} from 'vue';

@@ -3,10 +3,13 @@
     <div class="home-card-item" v-if="customerServiceStoreData.customerServiceList.value.length === 0">
       <el-card>
         <el-skeleton :rows="5" animated />
+        <DefaultDialog ref="DefaultDialogRef"></DefaultDialog>
         <h2>{{$t('message.home.no_data')}}</h2>
       </el-card>
     </div>
-
+    <el-card>
+        <h2>欢迎使用fylink～</h2>
+      </el-card>
     <el-row :gutter="15">
       <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12"
               v-for="(v, k) in customerServiceStoreData.customerServiceList.value" :key="k">
@@ -295,4 +298,7 @@ onMounted(() => {
   overflow: hidden;
   font-weight: bolder;
 }
+</style>
+<style>
+
 </style>
