@@ -15,6 +15,7 @@
           <div class="login-right-warp-main-title">
             <div>
               <div class><i class="ri-chat-1-fill"></i> 有朋自远方来，不亦悦乎。</div>
+              <div>(=・ω・=)</div>
             </div>
           </div>
           <div class="login-right-warp-main-form">
@@ -166,13 +167,13 @@ onMounted(() => {
         
         .login-right-warp-main-title {
           height: 80px;
-          line-height: 80px;
-          margin-top: 0px;
+          line-height: 40px;
+          margin-top: 10px;
           font-size: 27px;
           text-align: center;
           letter-spacing: 2px;
-         // animation: logoAnimation 0.3s ease;
-          animation-delay: 0.3s;
+          // animation: logoAnimation 0.3s ease;
+          //animation-delay: 0.3s;
           color: white;
           text-shadow: #000000 0px 0 4px;
           font-weight: 700  ;
