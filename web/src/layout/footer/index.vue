@@ -3,7 +3,7 @@
     <div class="layout-footer-warp">
       <div class="mt5">    
         <span>@風嶼Link「正在不断进化中...」| </span>
-        <span> build:2024/4/25</span>
+        <span> build:2024/4/27</span>
       </div>
     </div>
   </div>
