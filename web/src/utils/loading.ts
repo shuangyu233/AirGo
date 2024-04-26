@@ -13,7 +13,6 @@ export const NextLoading = {
         const div = <HTMLElement>document.createElement('div');
         div.setAttribute('class', 'loading-next');
         const htmls = `
-        <h1>目前网站上游出现问题，有问题请至tg群组:<br><a href="https://t.me/FYLink_Group">https://t.me/FYLink_Group</a></h1>
 			<div class="loading-next-box">
 				<div class="loading-next-box-warp" >
 					<div class="loading-next-box-item"></div>
