@@ -19,6 +19,7 @@
               <el-text size="large" style="margin-left: 10px;">{{ $t("message.ticket.total_ticket") }} : {{ ticketStoreData.userTicketList.value.total }}</el-text>
               
             </el-card>
+            <h2 style="margin:0.2em ;">欢迎使用風嶼Link‍(=・ω・=)～ <br>使用前请查看<a href="/#/documents">使用文档</a>，<a href="https://t.me/FYLink_Group">点我加入tg群组</a></h2>
             <!--
             <el-text size="large" style="margin-left:0.2em ;">自定义内容自定义内容自定义内容自定义内容自定义内容自定义内容自定义内容</el-text>-->
           </el-col>
