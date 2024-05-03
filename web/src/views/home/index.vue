@@ -395,7 +395,7 @@ const defaultArticle=()=>{
   articleStore.getDefaultArticles().then(()=>{
     setTimeout(()=>{
       DefaultDialogRef.value.openDialog()
-    },10000)
+    },2000)
   })
 }
 
