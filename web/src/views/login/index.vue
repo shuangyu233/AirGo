@@ -12,10 +12,10 @@
     <div class="login-right flex" >
       <div class="login-right-warp flex-margin" >
         <div class="login-right-warp-mian">
-          <div class="login-right-warp-main-title">
+          <div class="login-right-warp-main-title" style="margin-top: clamp(1.3rem, 2vw, 1.8rem);">
             <div>
-              <div class><i class="ri-chat-1-fill"></i> 有朋自远方来，不亦悦乎。</div>
-              <div>(=・ω・=)</div>
+              <h3 style="font-size: clamp(1.5rem, 2vw, 1.8rem);" ><i class="ri-chat-1-fill"></i> 有朋自远方来，不亦悦乎。<br>
+              (=・ω・=)</h3>
             </div>
           </div>
           <div class="login-right-warp-main-form">
@@ -167,7 +167,7 @@ onMounted(() => {
         
         .login-right-warp-main-title {
           height: 80px;
-          line-height: 40px;
+          line-height: 35px;
           margin-top: 10px;
           font-size: 27px;
           text-align: center;
