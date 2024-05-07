@@ -2,7 +2,6 @@ package service
 
 import (
 	"crypto/tls"
-
 	"github.com/ppoonk/AirGo/constant"
 	"github.com/ppoonk/AirGo/global"
 	"gopkg.in/gomail.v2"

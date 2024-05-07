@@ -3,8 +3,6 @@ package service
 import (
 	"errors"
 	"fmt"
-	"time"
-
 	"github.com/ppoonk/AirGo/global"
 	"github.com/ppoonk/AirGo/model"
 	"github.com/ppoonk/AirGo/utils/encrypt_plugin"
@@ -12,6 +10,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
+	"time"
 )
 
 type Migration struct{}

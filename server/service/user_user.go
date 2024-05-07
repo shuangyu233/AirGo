@@ -2,10 +2,6 @@ package service
 
 import (
 	"fmt"
-	"strconv"
-	"strings"
-	"time"
-
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/ppoonk/AirGo/constant"
 	"github.com/ppoonk/AirGo/global"
@@ -13,9 +9,11 @@ import (
 	"github.com/ppoonk/AirGo/utils/time_plugin"
 	timeTool "github.com/ppoonk/AirGo/utils/time_plugin"
 	"gorm.io/gorm"
+	"strconv"
+	"strings"
+	"time"
 
 	"errors"
-
 	"github.com/ppoonk/AirGo/model"
 	encrypt_plugin "github.com/ppoonk/AirGo/utils/encrypt_plugin"
 )

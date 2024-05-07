@@ -236,7 +236,6 @@ func (d *DataBase) InsertIntoRoleAndMenu() error {
 		{RoleID: 2, MenuID: 16},
 		{RoleID: 2, MenuID: 17},
 		{RoleID: 2, MenuID: 18},
-		{RoleID: 2, MenuID: 19},
 	}
 	if err := global.DB.Create(&roleAndMenuData).Error; err != nil {
 		return errors.New("role_and_menu表数据初始化失败!")

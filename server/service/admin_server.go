@@ -4,16 +4,6 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"os"
-	"os/exec"
-	"path"
-	"path/filepath"
-	"runtime"
-	"strconv"
-	"strings"
-	"syscall"
-	"time"
-
 	"github.com/gin-gonic/gin"
 	"github.com/go-resty/resty/v2"
 	"github.com/ppoonk/AirGo/constant"
@@ -25,6 +15,15 @@ import (
 	"github.com/ppoonk/AirGo/utils/websocket_plugin"
 	"github.com/tidwall/gjson"
 	"gorm.io/gorm"
+	"os"
+	"os/exec"
+	"path"
+	"path/filepath"
+	"runtime"
+	"strconv"
+	"strings"
+	"syscall"
+	"time"
 )
 
 type AdminServer struct{}
@@ -130,7 +129,7 @@ func (s *AdminServer) DownloadLatestVersion(ctx *gin.Context) error {
 	if err != nil {
 		return err
 	}
-	if tempFileInfo.Size() < 30000000 {
+	if tempFileInfo.Size() < 40000000 {
 		//v0.2.1版本是49697040，太小说明有问题
 		return err
 	}
