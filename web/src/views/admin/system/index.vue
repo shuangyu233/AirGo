@@ -67,7 +67,18 @@
                          :inactive-text="$t('message.common.disable')"
                          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"></el-switch>
             </el-form-item>
-            <el-divider></el-divider>
+            <el-form-item :label="$t('message.adminServer.Server.enable_swagger_api')" >
+              <el-switch v-model="serverConfig.serverConfig.value.website.enable_swagger_api" inline-prompt
+                         :active-text="$t('message.common.enable')"
+                         :inactive-text="$t('message.common.disable')"
+                         style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"></el-switch>
+            </el-form-item>
+            <el-form-item :label="$t('message.adminServer.Server.enable_assets_api')" >
+              <el-switch v-model="serverConfig.serverConfig.value.website.enable_assets_api" inline-prompt
+                         :active-text="$t('message.common.enable')"
+                         :inactive-text="$t('message.common.disable')"
+                         style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"></el-switch>
+            </el-form-item>
             <el-form-item :label="$t('message.adminServer.Server.frontend_url')" >
               <el-input v-model="serverConfig.serverConfig.value.website.frontend_url" placeholder="http://xxx.com" />
             </el-form-item>
@@ -88,6 +99,20 @@
             <el-input v-model="serverConfig.serverConfig.value.subscribe.backend_url" placeholder="http://xxx.com"
                       type="textarea" autosize />
             <span style="color: #9b9da1">*{{ $t("message.adminServer.Server.sub_prefix_msg") }}</span>
+          </el-form-item>
+          <el-form-item :label="$t('message.adminServer.Server.subscribe_domain_bind_request')" >
+            <el-switch v-model="serverConfig.serverConfig.value.subscribe.subscribe_domain_bind_request" inline-prompt
+                       :active-text="$t('message.common.enable')"
+                       :inactive-text="$t('message.common.disable')"
+                       style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"></el-switch>
+          </el-form-item>
+          <el-form-item :label="$t('message.adminServer.Server.clash_rule')" >
+            <el-input v-model="serverConfig.serverConfig.value.subscribe.clash_rule"
+                      type="textarea" :rows="10" />
+          </el-form-item>
+          <el-form-item :label="$t('message.adminServer.Server.surge_rule')" >
+            <el-input v-model="serverConfig.serverConfig.value.subscribe.surge_rule"
+                      type="textarea" :rows="10" />
           </el-form-item>
           <el-divider></el-divider>
           <el-form-item>
@@ -465,6 +490,7 @@ import { useConstantStore } from "/@/stores/constantStore";
 import { EventSourcePolyfill } from "event-source-polyfill";
 import { Local } from "/@/utils/storage";
 import { Codemirror } from "vue-codemirror";
+import {apiUrl} from "/@/utils/request"
 
 const apiStore = useApiStore();
 const apiStoreData = storeToRefs(apiStore);
@@ -479,7 +505,6 @@ const userStore = useUserStore();
 const { t } = useI18n();
 const constantStore = useConstantStore();
 const codemirrorRef = ref()
-
 
 const state = reactive({
   currentTapName: "1",
@@ -601,7 +626,7 @@ const openUpdateDialog = () => {
 
 const SSE = () => {
   state.isShowLogData = true;
-  let url = getApiPrefixAddress() + apiStore.adminApi.updateLatestVersion.path;
+  const url = apiUrl + apiStore.adminApi.updateLatestVersion.path;
   let token = Local.get("token");
   if (window.EventSource) {
     // let sseSource = new EventSource(url, { withCredentials: true });

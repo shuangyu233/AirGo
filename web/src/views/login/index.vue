@@ -11,7 +11,10 @@
     </div>
     <div class="login-right flex" >
       <div class="login-right-warp flex-margin" >
+    <div class="login-right flex" >
+      <div class="login-right-warp flex-margin" >
         <div class="login-right-warp-mian">
+          <div class="login-right-warp-main-title" style="margin-top: clamp(1.3rem, 2vw, 1.8rem);">
           <div class="login-right-warp-main-title" style="margin-top: clamp(1.3rem, 2vw, 1.8rem);">
             <div>
               <h3 style="font-size: clamp(1.5rem, 2vw, 1.8rem);" ><i class="ri-chat-1-fill"></i> 有朋自远方来，不亦悦乎。<br>
@@ -95,7 +98,9 @@ onMounted(() => {
   background-image: url("../../assets/bgc/login-body.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-size: cover;
   background-attachment: fixed;
+  
   
   .login-left {
     flex: 1;
@@ -110,12 +115,16 @@ onMounted(() => {
       left: 30px;
       z-index: 1;
      // animation: logoAnimation 0.3s ease;
+     // animation: logoAnimation 0.3s ease;
 
       img {
         width: 51px;
         height: 51px;
+        width: 51px;
+        height: 51px;
       }
 
+      .login-left-logo-text { //logo
       .login-left-logo-text { //logo
         display: flex;
         flex-direction: column;
@@ -140,15 +149,20 @@ onMounted(() => {
   }
 
 
+
   .login-right {
     width: 500px;
     margin-right: 35%;
+    
     
 
     .login-right-warp {
       //border: 1px solid var(--el-color-primary-light-3); //表单边框
       border-radius: 9px;
+      //border: 1px solid var(--el-color-primary-light-3); //表单边框
+      border-radius: 9px;
       width: 100%;
+      
       
       //height: 500px; //表单高度
       position: relative;
@@ -159,10 +173,18 @@ onMounted(() => {
       box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.486);
 
       
+      background: rgba(219, 227, 255, 0.245);
+	    -webkit-backdrop-filter: blur(10px);
+	    backdrop-filter: blur(10px);
+      box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.486);
+
+      
       .login-right-warp-mian {
         display: flex;
         flex-direction: column;
         height: 100%;
+        
+        
         
         
         .login-right-warp-main-title {
@@ -190,13 +212,16 @@ onMounted(() => {
 
 .login-footer {
   position: fixed;
+  position: fixed;
   left: 50%;
+  top: 96%;
   top: 96%;
   transform: translate(-50%, -50%); /* 50%为自身尺寸的一半 */
 }
 .html{
   overflow:hidden;
 }
+
 
 </style>
 <style>

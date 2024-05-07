@@ -297,4 +297,5 @@ const onLanguageChange = (lang: string) => {
     width: 100%;
   }
 
-}</style>
+}
+</style>
