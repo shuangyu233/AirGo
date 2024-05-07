@@ -251,7 +251,7 @@ export function formatPast(param: string | Date, format: string = 'YYYY-mm-dd'):
  */
 export function formatAxis(param: Date): string {
     let hour: number = new Date(param).getHours();
-    if (hour < 6) return '凌晨好';
+    if (hour < 6) return '凌晨好= =';
     else if (hour < 9) return '早上好٩(๑´0`๑)۶ ';
     else if (hour < 12) return '上午好‍(｀・ω・´) ';
     else if (hour < 14) return '中午好‍(°∀°)ﾉ ';
