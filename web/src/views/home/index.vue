@@ -31,7 +31,7 @@
     <h2 style="margin-left: 0.2em;margin-bottom: 0.7em;color: var(--el-text-color-primary);">{{$t('message.home.my_subscribe')}}</h2>
     <el-card style="border-radius: 10px;margin: 0.2em" v-if="customerServiceStoreData.customerServiceList.value.length === 0">
         <el-skeleton :rows="2" animated />
-        <h2>{{$t('message.home.no_data')}}        <el-button style="margin: 0.5em;font-size: 0.8em;width: auto;height: auto;"icon="Link"  round @click="copyText(state_invite.text);">{{$t('message.home.button_gotostore')}}</el-button>
+        <h2>{{$t('message.home.no_data')}}        <el-button style="margin: 0.5em;font-size: 0.8em;width: auto;height: auto;"icon="Link"  round @click="gotostore">{{$t('message.home.button_gotostore')}}</el-button>
 </h2>
 
     </el-card>
@@ -398,6 +398,9 @@ onMounted(() => {
   getUserTicketList()
 });
 
+const gotostore = () =>{
+  window.location.href = "/#/shop" 
+}
 </script>
 
 <style scoped lang="scss">
