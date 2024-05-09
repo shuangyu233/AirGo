@@ -93,6 +93,9 @@
                   <el-dropdown-item @click="openPushDialog(v)" command="e" divided>
                   {{$t('message.home.button_push')}}
                   </el-dropdown-item>
+                  <el-dropdown-item @click="deleteCustomerService(v)" command="e" divided>
+                    {{ $t('message.common.delete') }}
+                  </el-dropdown-item>
                 </el-dropdown-menu>
               </template>
             </el-dropdown>
@@ -301,6 +304,20 @@ const openPushDialog = (cs: CustomerService) => {
   state.isShowPushDialog = true;
   customerServiceStoreData.pushCustomerServiceRequest.value.customer_service_id = cs.id;
 };
+const deleteCustomerService = (cs: CustomerService) => {
+  ElMessageBox.confirm(t('message.common.message_confirm_delete'), t('message.common.tip'), {
+    confirmButtonText: t('message.common.button_confirm'),
+    cancelButtonText: t('message.common.button_cancel'),
+    type: 'warning',
+  })
+      .then(() => {
+        customerServiceStore.deleteCustomerService({id: cs.id} as CustomerService).then(() => {
+          getCustomerServiceList();
+        })
+      })
+      .catch(() => {
+      });
+}
 const closePushDialog = () => {
   state.isShowPushDialog = false;
 };

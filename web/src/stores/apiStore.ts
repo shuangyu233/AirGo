@@ -42,7 +42,7 @@ export const useApiStore = defineStore("apiStore", {
 
             // role
             newRole:{path: adminApiPre + "/role/newRole", method: "post"} as ApiItem,
-            getRoleList:{path: adminApiPre + "/role/getRoleList", method: "post"} as ApiItem,
+            getRoleList:{path: adminApiPre + "/role/getRoleList", method: "get"} as ApiItem,
             updateRole:{path: adminApiPre + "/role/updateRole", method: "post"} as ApiItem,
             delRole:{path: adminApiPre + "/role/delRole", method: "delete"} as ApiItem,
             getAllPolicy:{path: adminApiPre + "/role/getAllPolicy", method: "get"} as ApiItem,
@@ -136,6 +136,7 @@ export const useApiStore = defineStore("apiStore", {
             getCustomerServiceList:{path: userApiPre + "/customerService/getCustomerServiceList", method: "get"} as ApiItem,
             resetSubscribeUUID:{path: userApiPre + "/customerService/resetSubscribeUUID", method: "post"} as ApiItem,
             pushCustomerService:{path: userApiPre + "/customerService/pushCustomerService", method: "post"} as ApiItem,
+            deleteCustomerService:{path: userApiPre + "/customerService/deleteCustomerService", method: "delete"} as ApiItem,
 
             // menu
             getMenuList:{path: userApiPre + "/menu/getMenuList", method: "get"} as ApiItem,
