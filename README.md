@@ -1,3 +1,4 @@
+
 <img width="200px" src="https://telegraph-image.pages.dev/file/c48a2f45ebf102dd66131.png" align="left"/>
 
 # AirGo 前后端分离，多用户，多协议代理服务管理系统，简单易用
@@ -365,6 +366,4 @@ services:
 # 8 更多说明
 
 [点击查看更多](https://github.com/ppoonk/AirGo/wiki/Wiki)
-
-
 

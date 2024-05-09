@@ -4,6 +4,17 @@
       <el-tabs stretch style="height: 100%" @tab-change="tap" v-model="state.currentTapName">
         <el-tab-pane :label="$t('message.adminServer.tabWebsite')" name="1">
           <el-row style="margin-bottom: 20px">
+            <el-col>
+              <div>
+                <el-icon style="margin-right: 4px" :size="12">
+                  <InfoFilled />
+                </el-icon>
+                {{$t('message.adminServer.Server.website_local_deploy_time')}}
+              </div>
+              <div style="font-size: 20px">{{compileTime}}</div>
+              <el-link type="primary" href="https://raw.githubusercontent.com/AirGo-Official/AirGo/main/version_list.html">{{$t('message.adminServer.Server.web_version_note')}}</el-link>
+
+            </el-col>
             <el-col :span="12">
               <div>
                 <el-icon style="margin-right: 4px" :size="12">
@@ -13,6 +24,7 @@
               </div>
               <div style="font-size: 20px">{{ serverConfig.version.value.currentVersion.version }}</div>
             </el-col>
+            
             <el-col :span="12">
               <div>
                 <el-icon style="margin-right: 4px" :size="12">
@@ -666,6 +678,25 @@ onMounted(() => {
   getVersion();                  //获取版本
 });
 
+
+
+</script>
+
+
+<script lang='ts'>        //读取前端本地部署时间
+import versionJSON from "/src/utils/versionJSON.json";    
+import moment from "moment";
+export default {
+  data(){
+      return {
+          compileTime: ''
+      }
+  },
+  mounted(){
+      console.log(versionJSON)
+      this.compileTime = versionJSON
+  }
+}
 </script>
 
 <style lang="scss">

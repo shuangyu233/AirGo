@@ -5,7 +5,11 @@
     <CloseFull v-if="!themeConfig.isLockScreen"/>
 
   </el-config-provider>
+  
 </template>
+<style>
+
+</style>
 
 <script setup lang="ts" name="app">
 import {computed, defineAsyncComponent, nextTick, onBeforeMount, onMounted, onUnmounted, ref} from 'vue';
@@ -19,6 +23,8 @@ import mittBus from '/@/utils/mitt';
 import {useUserStore} from "/@/stores/user_logic/userStore";
 import { usePublicStore } from "/@/stores/publicStore";
 import { useI18n } from 'vue-i18n';
+import echarts from 'echarts'
+
 
 // 引入组件
 const Setings = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/setings.vue'));

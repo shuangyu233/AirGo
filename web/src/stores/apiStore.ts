@@ -142,11 +142,11 @@ export const useApiStore = defineStore("apiStore", {
             getMenuList:{path: userApiPre + "/menu/getMenuList", method: "get"} as ApiItem,
 
             // shop
+            preCreatePay:{path: userApiPre + "/shop/preCreatePay", method: "post"} as ApiItem,
             purchase:{path: userApiPre + "/shop/purchase", method: "post"} as ApiItem,
             getEnabledGoodsList:{path: userApiPre + "/shop/getEnabledGoodsList", method: "get"} as ApiItem,
 
             // order
-            preCreateOrder:{path: userApiPre + "/order/preCreateOrder", method: "post"} as ApiItem,
             getOrderInfo:{path: userApiPre + "/order/getOrderInfo", method: "post"} as ApiItem,
             getOrderList:{path: userApiPre + "/order/getOrderList", method: "post"} as ApiItem,
             getOrderInfoWaitPay:{path: userApiPre + "/order/getOrderInfoWaitPay", method: "post"} as ApiItem,

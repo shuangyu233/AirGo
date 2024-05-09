@@ -33,7 +33,6 @@ export const useAdminServerStore = defineStore("serverAdminStore", {
             } as Security,
             website: {
                 enable_register: true,
-                enable_base64_captcha:true, //是否开启注册图片验证码
                 enable_email_code: false,
                 enable_login_email_code: false,
                 acceptable_email_suffixes: '',

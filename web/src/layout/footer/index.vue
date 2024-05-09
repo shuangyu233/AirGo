@@ -1,10 +1,9 @@
 <template>
   <div class="layout-footer pb15">
-    <div style="margin: 0 auto;">
-      <div>
-        <el-link href="https://github.com/ppoonk/AirGo">© AirGo</el-link>
-        <span> | </span>
-        <el-link>By {{ themeConfig.globalTitle }}</el-link>
+    <div class="layout-footer-warp">
+      <div class="mt5">    
+        <span>@風嶼Link「正在不断进化中...」| </span>
+        <span> build:2024/5/3</span>
       </div>
     </div>
   </div>

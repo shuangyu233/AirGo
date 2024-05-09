@@ -23,5 +23,7 @@ const articleStoreData = storeToRefs(articleStore)
 </script>
 
 <style scoped>
-
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+  }
 </style>

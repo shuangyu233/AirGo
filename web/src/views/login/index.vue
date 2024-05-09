@@ -1,11 +1,11 @@
 <template>
   <div class="login-container flex">
     <div class="login-left">
-      <div class="login-left-logo" style="">
-          <img :src="themeConfig.logo_link"/>
+      <div class="login-left-logo" style="text-shadow: #000000 0px 0 3px;">
+          <img src="https://ice.frostsky.com/2024/03/23/f9c5cb33538da41e490d98e6051ee556.png"/>
           <div class="login-left-logo-text">
-            <span>{{ getThemeConfig.globalViceTitle }}</span>
-            <span class="login-left-logo-text-msg">{{ getThemeConfig.globalViceTitleMsg }}</span>
+            <span class="">風嶼Link</span>
+            <span class="login-left-logo-text-msg">「正在不断进化中...」</span>
           </div>
       </div>
     </div>
@@ -14,7 +14,8 @@
         <div class="login-right-warp-mian">
           <div class="login-right-warp-main-title" style="margin-top: clamp(1.3rem, 2vw, 1.8rem);">
             <div>
-              <div>{{ getThemeConfig.globalTitle }}</div>
+              <h3 style="font-size: clamp(1.5rem, 2vw, 1.8rem);" ><i class="ri-chat-1-fill"></i> 有朋自远方来，不亦悦乎。<br>
+              (=・ω・=)</h3>
             </div>
           </div>
           <div class="login-right-warp-main-form">
@@ -118,21 +119,21 @@ onMounted(() => {
       .login-left-logo-text { //logo
         display: flex;
         flex-direction: column;
-        width:clamp(10rem, 80vw, 100rem);
-
+        min-width:200px;
+        max-width: 300px;
 
         span {
           margin-left: 10px;
           font-size: 28px;
           color: #ffffff; //标题颜色
-          text-shadow: #000000 0px 0 2.5px;
+          text-shadow: #000000 0px 0 3px;
           font-weight: 900;
         }
 
         .login-left-logo-text-msg {
           font-size: 12px;
           color: #ffffff; //副标题颜色
-          text-shadow: #000000 0px 0 2.5px;
+          text-shadow: #000000 0px 0 3px;
           font-weight: 700  ;
       } }
     }
@@ -165,15 +166,17 @@ onMounted(() => {
         
         
         .login-right-warp-main-title {
-          height: 2em;
+          height: 80px;
           line-height: 35px;
           margin-top: 10px;
-          font-size: clamp(1.5rem, 2vw, 1.8rem);
+          font-size: 27px;
           text-align: center;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
+          // animation: logoAnimation 0.3s ease;
+          //animation-delay: 0.3s;
           color: white;
-          text-shadow: #000000 0px 0 2.5px;
-          font-weight: 800  ;
+          text-shadow: #000000 0px 0 4px;
+          font-weight: 700  ;
         }
 
         .login-right-warp-main-form {
@@ -199,42 +202,27 @@ onMounted(() => {
 <style>
 .el-tabs__item.is-active{
     color:rgb(255, 255, 255);
-    font-weight: 1000  ;
-    text-shadow: #000000 0px 0 1.5px;
-    font-size: 1.1em;
+    font-weight: 700  ;
+
   }
 
 .el-tabs__active-bar{
-    background-color:var(--el-color-primary);
+    background-color:rgb(255, 255, 255);
     }
 .el-tabs__nav-wrap::after{
   height:0px !important
 }
 .el-tabs__item{
-  color:rgb(255, 255, 255);
-  font-weight: 500 ;
-  font-size: 1.1em;
-  text-shadow: #000000 0px 0 1.5px;
+  color: rgba(255, 255, 255, 0.777);
 }
-
 .el-link__inner{
   color: rgba(255, 255, 255, 0.400);
 }
-
 .el-input__wrapper{
   background-color: transparent;
 }
 .el-input__inner{
   color: white;
-  text-shadow: #000000 0px 0 1px;
-  font-size: 1.1em;
-  font-weight: 700  ;
-
-}
-
-.el-form-item__error{
-  font-weight: 700  ;
-
 }
 
 </style>
