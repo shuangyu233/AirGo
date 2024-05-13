@@ -15,7 +15,6 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 // @ts-ignore
 import Prism from 'prismjs';
 
-import animated from 'animate.css'
 
 VueMarkdownEditor.use(vuepressTheme, {
     Prism,

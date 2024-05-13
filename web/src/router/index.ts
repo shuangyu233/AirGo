@@ -162,7 +162,7 @@ router.beforeEach(async (to, from, next) => {
             next();
             NProgress.done();
         }  else {
-            next(`/index`);
+            window.location.href = "https://home.fylink.link" 
             Session.clear();
             Local.clear();
             NProgress.done();
