@@ -10,5 +10,3 @@ server/air.db
 server/web/web
 .vscode/settings.json
 .vscode/launch.json
-web/node_modules
-node_modules
