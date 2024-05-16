@@ -12,3 +12,4 @@ server/web/web
 .vscode/launch.json
 web/node_modules
 node_modules
+web/web.zip
