@@ -10,3 +10,4 @@ server/air.db
 server/web/web
 .vscode/settings.json
 .vscode/launch.json
+web/web.zip
