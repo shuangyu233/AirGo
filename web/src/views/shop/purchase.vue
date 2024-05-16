@@ -84,25 +84,25 @@
           </el-row>
         </div>
         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-          <el-card v-if="state.active === 1
+        <el-card v-if="state.active === 1"
+             style="border-radius:10px;">
+          <div v-if="shopStoreData.currentOrder.value.order_type === constantStore.ORDER_TYPE_NEW">
+            <el-divider content-position="left">购买选项</el-divider>
+
+            <el-tag style="margin-bottom: 1em;" type="primary">{{ $t("message.adminOrder.Order.duration") }}</el-tag>
+                <div v-if="state.active === 1
           && shopStoreData.currentOrder.value.order_type === constantStore.ORDER_TYPE_NEW
-          && shopStoreData.currentOrder.value.goods_type === constantStore.GOODS_TYPE_SUBSCRIBE"
-                   style="border-radius:10px;padding: 10px;margin-top: 0.8em;">
-                <div style="margin-bottom: 20px;font-size: 20px" size="large" type="primary">{{ $t("message.adminOrder.Order.duration") }}</div>
-                <div>
-                    <el-radio-group v-model.number="shopStoreData.currentOrder.value.duration" size="small" @change="getOrderInfo">
-                      <el-radio v-if="shopStoreData.currentGoods.value.price" class="mb15" :value="1" border>单月</el-radio>
-                      <el-radio v-if="shopStoreData.currentGoods.value.price_3_month" class="mb15" :value="3" border>3个月</el-radio>
-                      <el-radio v-if="shopStoreData.currentGoods.value.price_6_month" class="mb15" :value="6"  border>6个月</el-radio>
-                      <el-radio v-if="shopStoreData.currentGoods.value.price_12_month" class="mb15" :value="12"  border>12个月</el-radio>
-                      <el-radio v-if="shopStoreData.currentGoods.value.price_unlimited_duration" class="mb15" :value="-1"  border>不限时</el-radio>
+          && shopStoreData.currentOrder.value.goods_type === constantStore.GOODS_TYPE_SUBSCRIBE">
+                    <el-radio-group v-model.number="shopStoreData.currentOrder.value.duration"  @change="getOrderInfo">
+                      <el-radio v-if="shopStoreData.currentGoods.value.price" class="mb15" :value="1" border>月付</el-radio>
+                      <el-radio v-if="shopStoreData.currentGoods.value.price_3_month" class="mb15" :value="3" border>季付</el-radio>
+                      <el-radio v-if="shopStoreData.currentGoods.value.price_6_month" class="mb15" :value="6"  border>半年付</el-radio>
+                      <el-radio v-if="shopStoreData.currentGoods.value.price_12_month" class="mb15" :value="12"  border>年付</el-radio>
+                      <el-radio v-if="shopStoreData.currentGoods.value.price_unlimited_duration" class="mb15" :value="-1"  border>不限时（流量包）</el-radio>
                     </el-radio-group>
                 </div>
-          </el-card>
-        <el-card v-if="state.active === 1"
-             style="border-radius:10px;padding: 10px;margin-top: 0.8em;">
-          <div v-if="shopStoreData.currentOrder.value.order_type === constantStore.ORDER_TYPE_NEW">
-            <div class="card-text" v-if="shopStoreData.currentOrder.value.goods_type !== constantStore.GOODS_TYPE_RECHARGE" >
+            <div v-if="shopStoreData.currentOrder.value.goods_type !== constantStore.GOODS_TYPE_RECHARGE" >
+              <el-tag style="margin-bottom: 1em;">折扣码</el-tag>
               <el-input v-model="shopStoreData.currentOrder.value.coupon_name"
                         :placeholder="$t('message.adminShop.Coupon.name')" size="default"
                         >
@@ -118,6 +118,8 @@
                 </template>
               </el-input>
             </div>
+            <el-divider content-position="left">价格明细</el-divider>
+
             <div class="card-text">
               <el-tag class="card-text-left" type="primary">{{ $t("message.adminOrder.Order.price") }}</el-tag>
               <el-text class="card-text-right">{{ shopStoreData.currentOrder.value.price }}</el-text>

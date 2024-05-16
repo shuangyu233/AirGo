@@ -22,7 +22,7 @@
           <el-col :xs="{span: 12 , push: 0}" :sm="12" :md="8" :lg="5" :xl="4"
                   v-for="(v, k) in shopStoreData.goodsList.value"
                   :key="k" @click="showGoodsDetails(v)">
-              <el-card style="margin-bottom: 3vh;border-radius:10px">
+              <el-card style="margin-bottom: 3vh;border-radius:10px;padding: 0px !important;">
                 <div style="width:auto;">
                   <el-image style="border-radius:5px" :src="v.cover_image"  fit="cover">
                     <template #error>
@@ -34,9 +34,9 @@
                 </div>
                 <div>
                   <div class="item-title">{{ v.subject }}</div>
-                  <div style="text-align: right;margin-right: 0.5em;font-size: 1.4em">
+                  <div style="text-align: right;margin-top: 0.5em;font-size: 1.4em">
                       <span style="color: red">￥</span>
-                      <span style="color: red;">{{ v.price }}</span>
+                      <span style="color: red;">{{ v.price }} /{{ $t("message.common.month") }}  {{ $t("message.common.up") }}</span>
                   </div>
                   <br>
                 </div>
@@ -97,10 +97,7 @@
              <!--商品信息tag标签-->
             <div style="margin-top: 10px;margin-bottom: 10px ;text-align: end;">
                 <!--商品类型-->
-              <el-tag size="small" v-if="shopStoreData.currentGoods.value.goods_type === constantStore.GOODS_TYPE_SUBSCRIBE
-              && shopStoreData.currentGoods.value.enable_traffic_reset">
-                 {{$t("message.adminShop.Goods.enable_traffic_reset")}}
-              </el-tag>
+
                <el-tag size="small" v-if="shopStoreData.currentGoods.value.goods_type === constantStore.GOODS_TYPE_SUBSCRIBE">
                 {{ $t("message.adminShop.Goods.goods_type") }}: {{ $t("message.constant.GOODS_TYPE_SUBSCRIBE") }}
                </el-tag>
@@ -114,14 +111,19 @@
                <el-tag size="small" type="warning">{{ $t("message.adminShop.Goods.quota") }}: {{ shopStoreData.currentGoods.value.quota
                 }} / {{ $t("message.adminShop.Goods.stock") }}: {{ shopStoreData.currentGoods.value.stock }}
                </el-tag>         
-                <div>                <!--发货类型 none（订阅）不做额外显示-->
+                <div style="margin-top: 10px;">                <!--发货类型 none（订阅）不做额外显示-->
                  <el-tag size="small" v-if="shopStoreData.currentGoods.value.deliver_type === constantStore.DELIVER_TYPE_AUTO">
                  {{ $t("message.adminShop.Goods.deliver_type") }}: {{ $t("message.constant.DELIVER_TYPE_AUTO") }}
                   </el-tag>
                  <el-tag size="small" v-if="shopStoreData.currentGoods.value.deliver_type === constantStore.DELIVER_TYPE_MANUAL">
                  {{ $t("message.adminShop.Goods.deliver_type") }}: {{ $t("message.constant.DELIVER_TYPE_MANUAL") }}
                  </el-tag>
+                 <el-tag size="small" v-if="shopStoreData.currentGoods.value.goods_type === constantStore.GOODS_TYPE_SUBSCRIBE
+              && shopStoreData.currentGoods.value.enable_traffic_reset">
+                 {{$t("message.adminShop.Goods.enable_traffic_reset")}}
+              </el-tag>
                 </div>
+                
                </div>
 
             <div style="margin-top: 10px;text-align: end;">
