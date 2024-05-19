@@ -34,6 +34,7 @@ export default {
     lastMonth:"上月",
     lastThreeMonths:"最近3個月",
     month:"月",
+    no_time_limit:"不限時",
 
     noData:"暫無數據",
 

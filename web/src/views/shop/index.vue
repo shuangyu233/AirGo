@@ -34,9 +34,10 @@
                 </div>
                 <div>
                   <div class="item-title">{{ v.subject }}</div>
-                  <div style="text-align: right;margin-top: 0.5em;font-size: 1.4em">
-                      <span style="color: red">￥</span>
-                      <span style="color: red;">{{ v.price }} /{{ $t("message.common.month") }}  {{ $t("message.common.up") }}</span>
+                  <div style="text-align: right;margin-top: 0.5em;font-size: 1.3em">
+                      <span style="color: red;font-size:x-large;">￥</span>
+                      <span v-if="v.price != ''" style="color: red;"><span style="color: red;font-size:x-large;">{{ v.price }}</span> /{{ $t("message.common.month") }}  {{ $t("message.common.up") }}</span>
+                      <span v-if="v.price === ''" style="color: red;"><span style="color: red;font-size:x-large;">{{ v.price_unlimited_duration }}</span> /{{ $t("message.common.no_time_limit") }}</span>
                   </div>
                   <br>
                 </div>
@@ -81,11 +82,9 @@
                 <el-descriptions-item :label="$t('message.adminShop.Goods.total_bandwidth')">
                   {{ shopStoreData.currentGoods.value.total_bandwidth }}GB
                 </el-descriptions-item>
-                <el-descriptions-item :label="$t('message.adminShop.Goods.node_connector')">
-                  {{ shopStoreData.currentGoods.value.node_connector }}
-                </el-descriptions-item>
                 <el-descriptions-item :label="$t('message.adminShop.Goods.node_speed_limit')">
-                  {{ shopStoreData.currentGoods.value.node_speed_limit }}
+                  <div v-if="shopStoreData.currentGoods.value.node_speed_limit === 0">不限速</div>
+                  <div v-if="shopStoreData.currentGoods.value.node_speed_limit > 0">{{ shopStoreData.currentGoods.value.node_speed_limit }} Mbps</div>
                 </el-descriptions-item>
               </div>
               <div v-if="shopStoreData.currentGoods.value.goods_type === constantStore.GOODS_TYPE_RECHARGE">
@@ -128,10 +127,16 @@
 
             <div style="margin-top: 10px;text-align: end;">
                 <span>
-                  <span style="color: red;">￥</span>
-                  <span style="color: red;font-size: 30px;">{{ shopStoreData.currentGoods.value.price }}</span>
+                  <span style="color: red;font-size:x-large;">￥</span>
+                  <!--需要判断是否为不限时、是否为订阅类商品-->
+                  <span v-if="shopStoreData.currentGoods.value.price != ''" style="color: red;font-size:x-large;"> {{ shopStoreData.currentGoods.value.price }}</span>
+                      <span v-if="shopStoreData.currentGoods.value.price === ''" style="color: red;font-size:x-large;"> {{ shopStoreData.currentGoods.value.price_unlimited_duration }}</span>
                   <span
-                    v-if="shopStoreData.currentGoods.value.goods_type === constantStore.GOODS_TYPE_SUBSCRIBE"> / {{ $t("message.common.month") }}</span>
+                    v-if="shopStoreData.currentGoods.value.goods_type === constantStore.GOODS_TYPE_SUBSCRIBE">
+                    <span v-if="shopStoreData.currentGoods.value.price != ''" style="color: red;"> / {{ $t("message.common.month") }}  {{ $t("message.common.up") }}</span>
+                    <span v-if="shopStoreData.currentGoods.value.price === ''" style="color: red;"> /{{ $t("message.common.no_time_limit") }}</span>
+                    
+                    </span>
                 </span>
             </div>
           </el-card>

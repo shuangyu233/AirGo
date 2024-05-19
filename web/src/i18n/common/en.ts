@@ -34,6 +34,8 @@ export default {
     lastMonth:"Last month",
     lastThreeMonths:"Last 3 months",
     month:"month",
+    no_time_limit:"No time limit",
+
 
     noData:"no data available",
 
