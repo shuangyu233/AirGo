@@ -69,7 +69,7 @@
                         :preview-src-list="[shopStoreData.currentGoods.value.cover_image]">
                 <template #error>
                   <div class="image-slot">
-                    <i class="ri-signal-wifi-error-line"></i>
+                    <i style="font-size: xx-large;" class="ri-image-line"></i>
                   </div>
                 </template>
               </el-image>

@@ -3,7 +3,7 @@
     <div class="home-card-one mb15">
       <el-radio-group v-model="state.goods_type" @change="getAllEnabledGoods">
         <el-radio-button :label="constantStore.GOODS_TYPE_SUBSCRIBE">
-          <el-icon style="height: 100%"><Promotion /></el-icon>
+          <el-icon><Promotion /></el-icon>
           {{ $t("message.constant.GOODS_TYPE_SUBSCRIBE") }}
         </el-radio-button>
         <el-radio-button :label="constantStore.GOODS_TYPE_GENERAL">
@@ -22,24 +22,22 @@
           <el-col :xs="{span: 12 , push: 0}" :sm="12" :md="8" :lg="5" :xl="4"
                   v-for="(v, k) in shopStoreData.goodsList.value"
                   :key="k" @click="showGoodsDetails(v)">
-              <el-card style="margin-bottom: 3vh;border-radius:10px;padding: 0px !important;">
-                <div style="width:auto;">
-                  <el-image style="border-radius:5px" :src="v.cover_image"  fit="cover">
+              <el-card class="item-card">
+                <div>
+                  <el-image :src="v.cover_image"  fit="cover">
                     <template #error>
                       <div class="image-slot">
-                        <i class="ri-signal-wifi-error-line"></i>
-                     </div>
+                        <i style="font-size: xx-large;" class="ri-image-line"></i>                     </div>
                     </template>
                   </el-image>
                 </div>
                 <div>
                   <div class="item-title">{{ v.subject }}</div>
-                  <div style="text-align: right;margin-top: 0.5em;font-size: 1.3em">
-                      <span style="color: red;font-size:x-large;">￥</span>
-                      <span v-if="v.price != ''" style="color: red;"><span style="color: red;font-size:x-large;">{{ v.price }}</span> /{{ $t("message.common.month") }}  {{ $t("message.common.up") }}</span>
-                      <span v-if="v.price === ''" style="color: red;"><span style="color: red;font-size:x-large;">{{ v.price_unlimited_duration }}</span> /{{ $t("message.common.no_time_limit") }}</span>
+                  <div class="item-price">
+                      <span style="color: #FF5349;">￥</span>
+                      <span v-if="v.price != ''"><span style="color: #FF5349;font-size:x-large;">{{ v.price }}</span><span style="color: var(--el-text-color-primary);"> /{{ $t("message.common.month") }}  {{ $t("message.common.up") }}</span></span>
+                      <span v-if="v.price === ''"><span style="color: #FF5349;font-size:x-large;">{{ v.price_unlimited_duration }}</span> /{{ $t("message.common.no_time_limit") }}</span>
                   </div>
-                  <br>
                 </div>
               </el-card>
 
@@ -61,7 +59,7 @@
                         :preview-src-list="[shopStoreData.currentGoods.value.cover_image]">
                 <template #error>
                   <div class="image-slot">
-                    <i class="ri-signal-wifi-error-line"></i>
+                    <i style="font-size: xx-large;" class="ri-image-line"></i>
                   </div>
                 </template>
               </el-image>
