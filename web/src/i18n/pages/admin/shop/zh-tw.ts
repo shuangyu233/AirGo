@@ -53,6 +53,8 @@ export default {
       status: "狀態",
       alipay: "alipay",
       epay: "epay",
+      pay_option:"支付選項",
+
     },
     Alipay:{
       alipay_app_id: "支付寶appID",

@@ -19,7 +19,7 @@
     <div>
       <div v-if="shopStoreData.goodsList.value.length > 0" style="border-radius: 1vh" class="layout-padding-auto">
         <el-row :gutter="20" align="top" >
-          <el-col :xs="{span: 12 , push: 0}" :sm="12" :md="8" :lg="5" :xl="4"
+          <el-col :xs="{span: 12 , push: 0}" :sm="8" :md="8" :lg="4" :xl="5"
                   v-for="(v, k) in shopStoreData.goodsList.value"
                   :key="k" @click="showGoodsDetails(v)">
               <el-card class="item-card">
@@ -56,7 +56,9 @@
                         lazy
                         style="height: 20vh; border-radius: 1vh;"
                         fit="cover"
-                        :preview-src-list="[shopStoreData.currentGoods.value.cover_image]">
+                        :preview-src-list="[shopStoreData.currentGoods.value.cover_image]"
+                        title="点击查看大图"
+                        >
                 <template #error>
                   <div class="image-slot">
                     <i style="font-size: xx-large;" class="ri-image-line"></i>

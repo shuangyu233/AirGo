@@ -53,6 +53,7 @@ export default {
       status: "status",
       alipay: "alipay",
       epay: "epay",
+      pay_option:"Pay options",
     },
     Alipay:{
       alipay_app_id: "alipay app id",
