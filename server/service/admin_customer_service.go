@@ -1,11 +1,12 @@
 package service
 
 import (
+	"time"
+
 	"github.com/ppoonk/AirGo/global"
 	"github.com/ppoonk/AirGo/model"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
-	"time"
 )
 
 type AdminCustomerService struct{}
@@ -61,7 +62,7 @@ func (c *AdminCustomerService) GetCustomerServiceListAlmostExpired() (*[]model.C
 func (c *AdminCustomerService) TrafficReset() error {
 	return global.DB.Transaction(func(tx *gorm.DB) error {
 		day := time.Now().Day()
-		return tx.Exec("UPDATE customer_service SET used_up = 0, used_down = 0, sub_status = 1 WHERE traffic_reset_day = ? AND service_status = 1", day).Error
+		return tx.Exec("UPDATE customer_service SET used_up = 0, used_down = 0, sub_status = 1 WHERE traffic_reset_day = ? AND service_status = 1 AND service_end_at IS NOT NULL", day).Error
 	})
 }
 
