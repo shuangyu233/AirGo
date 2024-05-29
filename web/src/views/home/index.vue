@@ -3,27 +3,35 @@
     <h2 style="margin-left: 0.2em;margin-bottom: 0.7em; color: var(--el-text-color-primary);">{{$t('message.home.overview')}}</h2>
 
     <el-card style="border-radius: 10px;margin-left: 0.2em;margin-right: 0.2em;word-break: break-all;">
-        <div style="margin-top: 10px;">
-        <el-row :gutter="0" align="top">
+
           <el-col :span="80" :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-            <h3 style="font-size: large;margin-left: 0.2em;margin-right: 0.2em;margin-bottom: 2vh;"> {{ currentTime }} , {{ userInfos.nick_name }}：</h3>
-            <div></div>
-            <el-card style="margin-top: 0.5em; border-radius: 10px">
+            <h3 style="font-size: large;margin-left: 0.2em;margin-right: 0.2em;margin-bottom: 0.5em;margin-top: 0.5em;"> {{ currentTime }} , {{ userInfos.nick_name }}：</h3>
+            <el-row :gutter="15" align="top">
+
+            <el-col  :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+
+            <el-card style="margin-top: 1em; border-radius: 10px;height: 6.5em;">
               <i class="ri-group-3-line" style="font-size: 20px;"></i>
               <el-text size="large" style="margin-left: 10px;">{{$t('message.home.my_invited')}} : {{ financeStoreData.commissionSummary.value.total_invitation }}          
-                 <el-button style="margin: 0.5em;font-size: 1em;width: auto;height: auto;"icon="CopyDocument"  round @click="copyText(state_invite.text);">{{$t('message.home.invite_url')}}</el-button>
+                 <el-button  style="margin: 0.5em;font-size: 1em;width: auto;height: auto;"icon="CopyDocument"  round @click="copyText(state_invite.text);">{{$t('message.home.invite_url')}}</el-button>
                </el-text>
             </el-card>
-            <el-card style="margin-top: 1em;margin-bottom: 1em; border-radius: 10px">
+            </el-col>
+            <el-col  :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+
+            <el-card style="margin-top: 1em;margin-bottom: 1em; border-radius: 10px;height: 6.5em;">
               <i class="ri-list-unordered" style="font-size: 20px;"></i>
-              <el-text size="large" style="margin-left: 10px;">{{ $t("message.ticket.total_ticket") }} : {{ ticketStoreData.userTicketList.value.total }}</el-text>
+              <el-text size="large" style="margin-left: 10px;height: 100%;">{{ $t("message.ticket.total_ticket") }} : {{ ticketStoreData.userTicketList.value.total }}
+                <el-button style="margin: 0.5em;font-size: 1em;width: auto;height: auto;"icon="Service"  round @click="reject_ticket"> 前往工单中心</el-button>
+              </el-text>
             </el-card>
-            <h2 style="margin:0.2em ;">欢迎使用風嶼Link‍(=・ω・=)～ <br>使用前请查看<a href="/#/documents">使用文档</a>，<a href="https://t.me/FYLink_Group">点我加入tg群组</a></h2>
+            </el-col>
+            </el-row>
+            <h2 style="margin:0.2em ;">欢迎使用風嶼Link‍(=・ω・=)～ <br>使用前请先查看 <a href="/#/documents" class="ri-article-line"> 使用文档</a><a class="ri-telegram-fill" style="margin-left: 1em;" href="https://t.me/FYLink_Group"> 加入tg群组</a></h2>
             <!--
             <el-text size="large" style="margin-left:0.2em ;">自定义内容自定义内容自定义内容自定义内容自定义内容自定义内容自定义内容</el-text>-->
           </el-col>
-        </el-row>
-        </div>
+
     </el-card>
 
     <el-divider />
@@ -35,10 +43,10 @@
 </h2>
 
     </el-card>
-    <el-row :gutter="15">
+    <el-row :gutter="8.5">
       <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12"
               v-for="(v, k) in customerServiceStoreData.customerServiceList.value" :key="k">
-         <el-card style="margin-left: 0.2em;margin-right: 0.2em;margin-bottom: 1em;border-radius: 10px;">
+         <el-card style="margin-left: 0.2em;margin-right: 0.2em;margin-bottom: 1.15em;border-radius: 10px;">
             <div style="text-align: right;color: #9b9da1;font-size: 10px">
               <span>ID: </span><span>{{v.id}}</span>
             </div>
@@ -75,7 +83,7 @@
                 </el-progress>
               </el-descriptions-item>
             </el-descriptions>
-          <div style="margin-top: 15px;margin-bottom: 10px;display: flex">
+          <div style="margin-top: 15px;display: flex">
             <el-button size="small" type="primary" @click="openSubDialog(v.sub_uuid)" round>{{$t('message.home.button_openOneClickImport')}}</el-button>
             <el-button size="small" type="success" @click="renew(v)" round>{{$t('message.home.button_renew')}}</el-button>
             <el-dropdown style="margin-left: auto">
@@ -84,16 +92,16 @@
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item @click="resetSubscribeUUID(v)" command="e" divided>
-                    {{$t('message.home.button_resetSub')}}
-                  </el-dropdown-item>
-                  <el-dropdown-item @click="openDialogCustomerServiceDetails(v.id)" command="e" divided >
+                  <el-dropdown-item @click="openDialogCustomerServiceDetails(v.id)">
                     {{$t('message.home.button_details')}}
                   </el-dropdown-item>
-                  <el-dropdown-item @click="openPushDialog(v)" command="e" divided>
+                  <el-dropdown-item @click="openPushDialog(v)">
                   {{$t('message.home.button_push')}}
                   </el-dropdown-item>
-                  <el-dropdown-item @click="deleteCustomerService(v)" command="e" divided>
+                  <el-dropdown-item @click="resetSubscribeUUID(v)">
+                    {{$t('message.home.button_resetSub')}}
+                  </el-dropdown-item>
+                  <el-dropdown-item @click="deleteCustomerService(v)">
                     {{ $t('message.common.delete') }}
                   </el-dropdown-item>
                 </el-dropdown-menu>
@@ -106,29 +114,12 @@
     </el-row>
     <!--    复制订阅弹窗-->
     <el-dialog v-model="state.isShowSubDialog" destroy-on-close width="600px" >
-      <div>
-        <el-text size="large">{{$t('message.home.selectSubPre')}}</el-text>
-        <el-select v-model="state.currentSubUrlPre">
-          <el-option
-            v-for="item in state.subUrlPre"
-            :key="item"
-            :label="item"
-            :value="item"
-          />
-        </el-select>
+      <template #header="{ close, titleId, titleClass }">
+      <div class="my-header">
+        <h4 :id="titleId" :class="titleClass">{{$t('message.home.button_openOneClickImport')}}</h4>
       </div>
-      <div class="mb20" style="margin-top: 1em;">
-        <el-button size="large" color="var(--el-color-primary)" style="width: 100%" @click="copyText(getSubUrl())">
-          <el-icon><Link /></el-icon>{{$t('message.home.subscription')}}
-        </el-button>
-      </div>
-      <div class="mb20">
-        <el-button size="large" color="var(--el-color-primary)" style="width: 100%" @click="showQR()">
-          <el-icon><FullScreen /></el-icon>
-          {{$t('message.home.scan_qr_subscription')}}
-        </el-button>
-      </div>
-      <el-row class="image">
+    </template>
+    <el-row class="image">
         <el-col v-for="(v,k) in state.subClient" :key="k" class="block"
                 :xs="8" :sm="8" :md="4" :lg="4" :xl="4"
                 @click="insert(v.name)"
@@ -137,24 +128,61 @@
           <span class="name">{{ v.name }}</span>
         </el-col>
       </el-row>
+      <div class="mb10" style="margin-top: 1em;">
+        <el-button size="large" color="var(--el-color-primary)" style="width: 100%" @click="copyText(getSubUrl())">
+          <el-icon><Link /></el-icon>{{$t('message.home.subscription')}}
+        </el-button>
+      </div>
+      <div>
+        <el-button class="mb10" size="large" color="var(--el-color-primary)" style="width: 100%" @click="showQR()">
+          <el-icon><FullScreen /></el-icon>
+          {{$t('message.home.scan_qr_subscription')}}
+        </el-button>
+      </div>
+      <h4 style="text-align: end;text-decoration: underline;" @click="openSelectSubURL"><i class="ri-question-line"></i> {{$t('message.home.import_questions1')}}</h4>
+      <el-dialog v-model="state.isShowSelectSubURL" destroy-on-close width="400px">
+        <template #header="{ close, titleId, titleClass }">
+          <div class="my-header">
+            <h4 :id="titleId" :class="titleClass"><i class="ri-question-line"></i> {{$t('message.home.import_questions1')}}</h4>
+           </div>
+         </template>
+         <h4 class="mb20">使用前请先查看 <a href="/#/documents" class="ri-article-line"> 使用文档</a></h4>
+         <h4>如提示网络错误，请尝试更改订阅地址：</h4>
+         <h5>*更改完毕后，请点击右上角关闭按钮后并重试导入</h5>
+         <el-select v-model="state.currentSubUrlPre" style="margin-top: 0.5em;margin-bottom: 1em;">
+          <el-option
+            v-for="item in state.subUrlPre"
+            :key="item"
+            :label="item"
+            :value="item"
+          />
+        </el-select>
+        <h4 style="margin-top: 1.2em;">还有其它问题？   请  <a class="ri-customer-service-2-line" href="/#/ticket">上报工单</a>  或 前往  <a class="ri-telegram-fill" href="https://t.me/FYLink_Group">群组</a></h4>
+
+      </el-dialog>
     </el-dialog>
     <!-- 二维码弹窗 -->
-    <el-dialog v-model="state.isShowQRDialog" destroy-on-close align-center :show-close="false">
+    <el-dialog v-model="state.isShowQRDialog" destroy-on-close align-center :show-close="false" width="340px">
         <div id="qrcode" class="qrcode" ref="qrcodeRef"></div>
     </el-dialog>
     <!--    push弹窗-->
-    <el-dialog v-model="state.isShowPushDialog" destroy-on-close align-center>
+    <el-dialog v-model="state.isShowPushDialog" destroy-on-close align-center width="400px">
+      <template #header>
+        <h3>Push</h3>
+    </template>
       <div>
         <el-form :model="customerServiceStoreData.pushCustomerServiceRequest.value" label-position="top">
-          <el-form-item :label="$t('message.home.target_username')">
-            <el-input v-model="customerServiceStoreData.pushCustomerServiceRequest.value.to_user_name"></el-input>
+          <h4>{{$t('message.home.target_username')}}:</h4>
+          <h5 style="margin-bottom: 0.5em;">*您可以通过此操作将您的套餐Push到其它的用户中</h5>
+          <el-form-item>
+            <el-input v-model="customerServiceStoreData.pushCustomerServiceRequest.value.to_user_name" disabled placeholder="正在开发完善中...敬请期待！"></el-input>
           </el-form-item>
         </el-form>
       </div>
       <template #footer>
         <div class="dialog-footer">
           <el-button @click="closePushDialog">{{$t('message.common.button_cancel')}}</el-button>
-          <el-button type="primary" @click="toPush">{{$t('message.common.button_confirm')}}</el-button>
+          <el-button type="primary" @click="toPush" disabled id="push_button">{{$t('message.common.button_confirm')}}</el-button>
         </div>
       </template>
 
@@ -226,14 +254,15 @@ const DefaultDialogRef = ref();
 const state = reactive({
   isShowOneClickImport:false,
   isShowSubDialog: false,
+  isShowSelectSubURL: false,
   isShowPushDialog: false,
   isShowQRDialog: false,
   subType: ["NekoBox", "v2rayNG", "v2rayN", "Shadowrocket", "Clash", "Surge", "Quantumult", "V2rayU"],
   subClient: [
     {name:"Shadowrocket",logo:logo_shadowrocket},
     {name:"ClashX",logo:logo_clashx},
-    {name:"Clash Verge",logo:logo_clash_verge},
-    {name:"Clash Meta",logo:logo_clash_meta},
+    {name:"Clash Verge Rev",logo:logo_clash_verge},
+    {name:"Clash Meta For Android",logo:logo_clash_meta},
     {name:"Surge",logo:logo_surge},
     {name:"NekoBox",logo:logo_nekobox},
   ],
@@ -300,10 +329,17 @@ const openSubDialog = (subUUID: string) => {
   state.subUrlPre = publicStoreData.publicSetting.value.backend_url.split('\n')
   state.currentSubUrlPre = state.subUrlPre[0] //设置默认的订阅前缀
 };
+const openSelectSubURL= (subUUID: string) => {
+  state.isShowSelectSubURL = true,
+  state.currentSubUrlPre = state.subUrlPre[0] //设置默认的订阅前缀
+
+};
+
 const openPushDialog = (cs: CustomerService) => {
   state.isShowPushDialog = true;
   customerServiceStoreData.pushCustomerServiceRequest.value.customer_service_id = cs.id;
-};
+
+}
 const deleteCustomerService = (cs: CustomerService) => {
   ElMessageBox.confirm(t('message.common.message_confirm_delete'), t('message.common.tip'), {
     confirmButtonText: t('message.common.button_confirm'),
@@ -316,6 +352,10 @@ const deleteCustomerService = (cs: CustomerService) => {
         })
       })
       .catch(() => {
+        ElMessage({
+        type: 'info',
+        message: 'Cancel 已取消',
+      })
       });
 }
 const closePushDialog = () => {
@@ -341,8 +381,12 @@ const renew=(cs:CustomerService)=>{
   PurchaseRef.value.openDialog(constantStore.ORDER_TYPE_RENEW);
 }
 const resetSubscribeUUID=(cs:CustomerService)=>{
-  ElMessageBox.alert(t('message.home.message_confirm_reset_sub'),t('message.common.tip'), {
+  ElMessageBox.confirm(t('message.home.message_confirm_reset_sub'),t('message.common.tip'),
+  {
     confirmButtonText: t('message.common.button_confirm'),
+    cancelButtonText: t('message.common.button_cancel'),
+    type: 'warning',
+
   })
     .then(() => {
       customerServiceStore.resetSubscribeUUID({id:cs.id,sub_uuid:uuid()} as CustomerService).then((res)=>{
@@ -351,6 +395,10 @@ const resetSubscribeUUID=(cs:CustomerService)=>{
       })
     })
     .catch(() => {
+      ElMessage({
+        type: 'info',
+        message: 'Cancel 已取消',
+      })
     });
 }
 const showQR = (subType?: string) => {
@@ -418,14 +466,19 @@ onMounted(() => {
 const gotostore = () =>{
   window.location.href = "/#/shop" 
 }
+
+const reject_ticket = () =>{
+  window.location.href = "/#/ticket" 
+}
+
 </script>
 
 <style scoped lang="scss">
 .image {
-  margin-top: 40px;
+  margin-top: 0.5em;
 }
 .image .block {
-  margin-bottom: 20px;
+  margin-bottom: 7px;
   text-align: center;
   display: inline-block;
   width: 20%;

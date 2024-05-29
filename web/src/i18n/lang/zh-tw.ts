@@ -21,7 +21,7 @@ export default {
 		serverStatus: "節點狀態",
 		documents: "檔案",
 		ticket: "工單",
-		finance:"財務中心 Beta",
+		finance:"財務中心",
 	},
 	staticRoutes: {
 		signIn: '登入',

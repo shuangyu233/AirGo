@@ -16,16 +16,9 @@
 /* 页面宽度小于768px
 ------------------------------- */
 @media screen and (max-width: $sm) {
-  // 用户名称
+  // 用户完整名称
   .layout-navbars-username-hide {
     display: none;
-  }
-  .layout-memu-bottom-display{
-    display:block !important;
-  }
-  .layout-breadcrumb-mobile{
-    font-size: 1.2rem !important;
-    margin-left: 0.6em !important;
   }
   // 外链视图
   .layout-view-link {
@@ -45,6 +38,15 @@
 /* 页面宽度小于1000px
 ------------------------------- */
 @media screen and (max-width: 1000px) {
+  //显示菜单按键
+  .layout-memu-bottom-display{
+    display:block !important;
+  }
+  //移动端面包屑样式
+  .layout-breadcrumb-mobile{
+    font-size: 1.2rem !important;
+    margin-left: 0.6em !important;
+  }
   // 布局配置
   .layout-drawer-content-flex {
     position: relative;

@@ -415,7 +415,7 @@
   margin-top: 0.25em !important;
   margin: 0.5em;
   font-weight: bolder;
-  font-size: clamp(1.13rem, 2vw, 1.5rem);
+  font-size: clamp(1.13rem, 2vw, 1.3rem);
   word-break: break-all;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -429,8 +429,6 @@
   .el-card__body {
     padding: 0px !important;
   }
-
-  min-height:31vh;
   border-radius: 10px;
   margin-top: 1em;
   margin-bottom: 1em;

@@ -35,7 +35,10 @@ export default {
     target_username:"Target username",
     message_confirm_reset_sub:"Are you sure to reset the subscription URL?",
     subscription:"Copy subscription link",
-    selectSubPre:"Select subscription prefix",
+    selectSubPre:"Select subscription prefix(Try changing this option when importing subscription network error)",
     scan_qr_subscription:"Scan QR code",
+
+    import_questions1:"Can't import?",
+
   },
 };

@@ -22,7 +22,7 @@ export default {
     serverStatus: "Server Status",
     documents: "Documents",
     ticket: "Ticket",
-    finance:"Finance Beta",
+    finance:"Finance",
   },
   staticRoutes: {
     signIn: "signIn",

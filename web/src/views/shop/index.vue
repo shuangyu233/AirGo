@@ -47,7 +47,7 @@
       <el-empty v-else :description="$t('message.common.noData')"></el-empty>
     </div>
     <el-dialog v-model="state.isShowGoodsDetails" 
-               :title="$t('message.common.details')"
+               :title="$t('message.adminShop.Goods.details')"
                destroy-on-close>
       <el-row :gutter="20">
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">

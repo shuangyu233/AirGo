@@ -12,6 +12,7 @@ export default {
     resultText5:"前往支付",
     resultText6:"请求超时，请稍后检查我的订单，有无订单记录",
     Goods:{
+      details:"商品详情",
       index:"序号",
       created_at: "创建时间",
       updated_at: "更新时间",

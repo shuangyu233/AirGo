@@ -12,6 +12,7 @@ export default {
     resultText5:"Go to Pay",
     resultText6:"Request timeout, please check my order later for any order records",
     Goods:{
+      details:"Item details",
       index:"index",
       created_at: "created at",
       updated_at: "updated at",

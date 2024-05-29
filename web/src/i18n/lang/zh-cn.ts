@@ -21,7 +21,7 @@ export default {
     serverStatus: "节点状态",
     documents: "使用文档",
     ticket: "我的工单",
-    finance:"财务中心 Beta",
+    finance:"财务中心",
   },
   staticRoutes: {
     signIn: "登录",

@@ -2,7 +2,7 @@
   <div>
     <el-dialog
       v-model="state.isShowDialog"
-      :title="$t('message.common.details')"
+      :title="$t('message.adminShop.Goods.details')"
       
       @close="closeDialog"
       destroy-on-close>
@@ -144,6 +144,7 @@
         </el-col>
       </div>
 
+      <!--底部按钮-->
         <template #footer>
            <div v-if="state.active === 1">
             <el-button type="primary" @click="nextSubmitOrder">{{ $t("message.adminOrder.submitOrder") }}</el-button>

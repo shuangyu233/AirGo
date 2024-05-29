@@ -2,8 +2,8 @@
   <div class="layout-footer pb15">
     <div class="layout-footer-warp">
       <div class="mt5">    
-        <span>@風嶼Link「正在不断进化中...」| </span>
-        <span> build:2024/5/10</span>
+        <span style="color: var(--el-text-color-primary--el-color-info-dark-2);">@風嶼Link「正在不断进化中...」| </span>
+        <span style="color: var(--el-text-color-primary--el-color-info-dark-2);"> build:2024/5/29</span>
       </div>
     </div>
   </div>

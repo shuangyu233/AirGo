@@ -35,7 +35,10 @@ export default {
     target_username:"目標用戶名",
     message_confirm_reset_sub:"是否確認重置訂閱地址?",
     subscription:"複製訂閱連結",
-    selectSubPre:"選擇訂閱首碼",
+    selectSubPre:"選擇訂閱首碼（匯入訂閱網路錯誤時請嘗試變更此選項）",
     scan_qr_subscription:"掃描二維碼訂閱",
+
+    import_questions1:"無法導入？",
+
   },
 };
