@@ -92,7 +92,6 @@ import { TableColumnCtx } from "element-plus";
 import {GetDurationMonthFromFirstToCurrent,DateStrHandler} from "/@/utils/formatTime"
 import { useAdminShopStore } from "/@/stores/admin_logic/shopStore";
 import { useAdminUserStore } from "/@/stores/admin_logic/userStore";
-import { useConstantStore } from "/@/stores/constantStore";
 import { useI18n } from "vue-i18n";
 import { useAdminNodeStore } from "/@/stores/admin_logic/nodeStore";
 
@@ -110,7 +109,6 @@ const shopStore = useAdminShopStore()
 const shopStoreData = storeToRefs(shopStore)
 const userStore = useAdminUserStore()
 const userStoreData = storeToRefs(userStore)
-const constantStore = useConstantStore()
 const {t} =useI18n()
 const nodeStore = useAdminNodeStore()
 const nodeStoreData = storeToRefs(nodeStore)
@@ -478,7 +476,6 @@ const initBarChartForNodeTraffic = () => {
         splitLine: { show: true, lineStyle: { type: 'dashed', color: '#f5f5f5' } },
         axisLine: { show: false },
         axisTick: { show: false },
-        axisLabel: { color: state.charts.color, formatter: '{value} ' },
       },
     ],
     series: [
@@ -578,6 +575,7 @@ onBeforeMount(()=>{
 onMounted(() => {
 	initEchartsResize();
 });
+
 // 由于页面缓存原因，keep-alive
 onActivated(() => {
 	initEchartsResizeFun();

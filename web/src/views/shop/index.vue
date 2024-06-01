@@ -179,7 +179,6 @@ import { useRouter } from "vue-router";
 import { useShopStore } from "/@/stores/user_logic/shopStore";
 import { storeToRefs } from "pinia";
 import { useConstantStore } from "/@/stores/constantStore";
-import { el } from "element-plus/es/locale";
 
 const shopStore = useShopStore();
 const shopStoreData = storeToRefs(shopStore);

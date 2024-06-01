@@ -13,7 +13,6 @@
 
 <script setup lang="ts" name="app">
 import {computed, defineAsyncComponent, nextTick, onBeforeMount, onMounted, onUnmounted, ref} from 'vue';
-import {useRoute} from 'vue-router';
 import {storeToRefs} from 'pinia';
 import {useTagsViewRoutes} from '/@/stores/tagsViewRoutes';
 import {useThemeConfig} from '/@/stores/themeConfig';
@@ -23,7 +22,6 @@ import mittBus from '/@/utils/mitt';
 import {useUserStore} from "/@/stores/user_logic/userStore";
 import { usePublicStore } from "/@/stores/publicStore";
 import { useI18n } from 'vue-i18n';
-import echarts from 'echarts'
 
 
 // 引入组件
@@ -32,7 +30,6 @@ const CloseFull = defineAsyncComponent(() => import('/@/layout/navBars/breadcrum
 // 定义变量内容
 const { messages, locale } = useI18n();
 const setingsRef = ref();
-const route = useRoute();
 const userStore = useUserStore()
 const stores = useTagsViewRoutes();
 const storesThemeConfig = useThemeConfig();

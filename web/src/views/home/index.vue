@@ -199,7 +199,6 @@
 
 <script setup lang="ts">
 import { onMounted, reactive, ref, defineAsyncComponent,computed } from "vue";
-import { useApiStore } from "/@/stores/apiStore";
 import { DateStrToTime } from "/@/utils/formatTime";
 import commonFunction from "/@/utils/commonFunction";
 import { usePublicStore } from "/@/stores/publicStore";
@@ -223,12 +222,13 @@ import logo_clash_verge from "/@/assets/img/logo-clash-verge.png"
 import logo_clashx from "/@/assets/img/logo-clashx.png"
 import logo_surge from "/@/assets/img/logo-surge.png"
 import logo_nekobox from "/@/assets/img/logo-nekobox.jpeg"
+import { ElNotification } from 'element-plus'
+
 
 const articleStore = useArticleStore()
 const constantStore = useConstantStore()
 const shopStore = useShopStore()
 const shopStoreData = storeToRefs(shopStore)
-const apiStore = useApiStore();
 const publicStore = usePublicStore();
 const publicStoreData = storeToRefs(publicStore);
 const customerServiceStore = useCustomerServiceStore();
@@ -350,11 +350,16 @@ const deleteCustomerService = (cs: CustomerService) => {
         customerServiceStore.deleteCustomerService({id: cs.id} as CustomerService).then(() => {
           getCustomerServiceList();
         })
+        ElNotification({
+        title: '套餐已成功删除',
+        message: '若显示错误，可尝试刷新页面',
+        type: 'success',
+         })
       })
       .catch(() => {
         ElMessage({
         type: 'info',
-        message: 'Cancel 已取消',
+        message: '操作已取消',
       })
       });
 }
@@ -390,14 +395,18 @@ const resetSubscribeUUID=(cs:CustomerService)=>{
   })
     .then(() => {
       customerServiceStore.resetSubscribeUUID({id:cs.id,sub_uuid:uuid()} as CustomerService).then((res)=>{
-        ElMessage.success(res.msg)
+        ElNotification({
+        title: '套餐的订阅地址已重置',
+        message: '请妥善保管，有异常请尝试刷新页面',
+        type: 'success',
+  })
         getCustomerServiceList()
       })
     })
     .catch(() => {
       ElMessage({
         type: 'info',
-        message: 'Cancel 已取消',
+        message: '操作已取消',
       })
     });
 }
@@ -433,8 +442,8 @@ const insert=(subType?: string)=>{
       break
     case "NekoBox":
     case "ClashX":
-    case "Clash Verge":
-    case "Clash Meta":
+    case "Clash Verge Rev":
+    case "Clash Meta For Android":
       window.location.href = "clash://install-config?url=" + getSubUrl()
       break
     case "Surge":

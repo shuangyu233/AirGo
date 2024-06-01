@@ -55,10 +55,7 @@ const openDialog = (row: Ticket) => {
   ticketStoreData.currentTicket.value = row
   ticketStore.firstTicket()
 }
-// 关闭弹窗
-const closeDialog = () => {
-  state.isShowDialog = false;
-};
+
 //
 const sendMessage=()=>{
   ticketStoreData.newTicketMessage.value.ticket_id=ticketStoreData.currentTicket.value.id

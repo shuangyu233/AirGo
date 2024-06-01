@@ -117,7 +117,6 @@ import {useRoute, useRouter} from 'vue-router';
 import {storeToRefs} from 'pinia';
 import {useUserStore} from "/@/stores/user_logic/userStore";
 import {useThemeConfig} from '/@/stores/themeConfig';
-import {useApiStore} from "/@/stores/apiStore";
 import { useConstantStore } from "/@/stores/constantStore";
 import { usePublicStore } from "/@/stores/publicStore";
 import other from "/@/utils/other";
@@ -131,8 +130,6 @@ const userStore = useUserStore()
 const {loginData} = storeToRefs(userStore)
 const storesThemeConfig = useThemeConfig();
 const {themeConfig} = storeToRefs(storesThemeConfig);
-const apiStore = useApiStore()
-const apiStoreData = storeToRefs(apiStore)
 const { locale, t } = useI18n();
 //定义参数
 const state = reactive({
