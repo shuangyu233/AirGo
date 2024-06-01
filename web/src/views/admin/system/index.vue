@@ -683,22 +683,6 @@ onMounted(() => {
 </script>
 
 
-<script lang='ts'>        //读取前端本地部署时间
-import versionJSON from "/src/utils/versionJSON.json";    
-import moment from "moment";
-export default {
-  data(){
-      return {
-          compileTime: ''
-      }
-  },
-  mounted(){
-      console.log(versionJSON)
-      this.compileTime = versionJSON
-  }
-}
-</script>
-
 <style lang="scss">
 .label .el-form-item__label {
   font-weight: bolder;
