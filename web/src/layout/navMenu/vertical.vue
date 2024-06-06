@@ -30,6 +30,7 @@
 			</template>
 		</div>
 		</template>
+		<el-menu-item @click="open_status" style="margin-top: 5px;" ><i class="ri-cloudy-line menu-text-icon"></i><el-text class="menu-text">网站运行状态</el-text></el-menu-item>
 	</el-menu>
 </template>
 
@@ -98,4 +99,8 @@ watch(
 		immediate: true,
 	}
 );
+
+const open_status = () => {
+	window.location.href = "https://status.fylink.link/" 
+}
 </script>
