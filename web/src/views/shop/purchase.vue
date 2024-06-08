@@ -147,11 +147,11 @@
       <!--底部按钮-->
         <template #footer>
            <div v-if="state.active === 1">
-            <el-button type="primary" @click="nextSubmitOrder">{{ $t("message.adminOrder.submitOrder") }}</el-button>
+            <el-button type="primary" v-preReClick @click="nextSubmitOrder">{{ $t("message.adminOrder.submitOrder") }}</el-button>
           </div>
           <div v-if="state.active === 2">
             <el-button color="blue" @click="closeDialog">{{ $t("message.common.button_cancel") }}</el-button>
-            <el-button color="blue" @click="nextPurchase" :disabled="!shopStoreData.currentOrder.value.pay_id">
+            <el-button color="blue" v-preReClick @click="nextPurchase" :disabled="!shopStoreData.currentOrder.value.pay_id">
               {{ $t("message.adminShop.purchase") }}
             </el-button>
           </div>
@@ -210,7 +210,7 @@
                 <el-link type="primary" :href="state.alipayUrl" target="_blank">{{ state.alipayUrl }}</el-link>
               </div>
               <div v-else-if="state.showPayInfo === 2">
-                <el-button type="primary" round size="large"  @Click="reject_epay" >{{ $t("message.adminShop.resultText5") }}
+                <el-button type="primary" round size="large" v-preReClick @Click="reject_epay" >{{ $t("message.adminShop.resultText5") }}
                 </el-button>
               </div>
             </template>
@@ -323,6 +323,10 @@ const openDialog = (type: string) => {
   }
 
 };
+
+
+
+
 const closeDialog = () => {
   state.active = 1;
   state.isShowDialog = false;
@@ -344,8 +348,7 @@ const getOrderInfo = () => {
     // shopStoreData.currentOrder.value = {} as Order;
     if (res.code === 10) { //code=10，能正常获取请求数据，但有重要message 需要显式提醒。此处用来提示折扣码是否有效
       shopStoreData.currentOrder.value.coupon_name = "";
-      ElMessageBox.confirm(res.msg, t("message.common.tip"), {
-        cancelButtonText: t("message.common.button_cancel"),
+      ElMessageBox.alert(res.msg, t("message.common.tip"), {
         type: "warning"
       }).then(() => {
       });

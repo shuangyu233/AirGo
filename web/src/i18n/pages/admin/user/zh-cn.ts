@@ -20,7 +20,7 @@ export default {
       invitation_code: "邀请码",
       referrer_user_id: "推荐人ID",
       balance: "余额",
-      tg_id: "tg id",
+      tg_id: "TG ID :   ",
       role_group: "角色组",	//角色组
       orders: "订单",     //订单
       //通知参数

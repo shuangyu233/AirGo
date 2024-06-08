@@ -5,9 +5,7 @@
       <el-input text :placeholder="$t('message.adminUser.SysUser.user_name')" v-model="loginData.user_name" clearable
                 autocomplete="off">
         <template #prefix>
-          <el-icon>
-            <ele-User/>
-          </el-icon>
+          <i style="color: white;" class="ri-user-3-line"></i>
         </template>
       </el-input>
     </el-form-item>
@@ -15,13 +13,11 @@
       <el-input :type="state.isShowPassword ? 'text' : 'password'" :placeholder="$t('message.adminUser.SysUser.password')"
                 v-model="loginData.password" autocomplete="off">
         <template #prefix>
-          <el-icon>
-            <ele-Unlock/>
-          </el-icon>
+          <i style="color: white;" class="ri-lock-password-line"></i>
         </template>
         <template #suffix>
-          <i class="iconfont  login-content-password"
-             :class="state.isShowPassword ? 'icon-yincangmima' : 'icon-xianshimima'"
+          <i style="color: white;" class="ri-eye-line"
+             :class="state.isShowPassword ? 'ri-eye-off-line' : 'ri-eye-line'"
              @click="state.isShowPassword = !state.isShowPassword">
           </i>
         </template>
@@ -33,9 +29,7 @@
         <el-input text maxlength="4" :placeholder="$t('message.login.placeholder1')" v-model="loginData.email_code" clearable
                   autocomplete="off">
           <template #prefix>
-            <el-icon>
-              <ele-Position/>
-            </el-icon>
+            <i style="color: white;" class="ri-key-2-line"></i>
           </template>
         </el-input>
       </el-col>
@@ -44,8 +38,10 @@
         <el-button class="login-content-code"
                    type="primary"
                    :disabled="state.isCountDown || loginData.user_name === ''"
-                   @click="onGetEmailCode">
-          {{ state.isCountDown ? `$t('message.login.retry'):${state.countDownTime}s` : $t('message.login.codeText') }}
+                   @click="onGetEmailCode"
+                   v-preReClick
+                   >
+          {{ state.isCountDown ? `${t('message.login.retry')}:${state.countDownTime}s` : $t('message.login.codeText') }}
         </el-button>
       </el-col>
     </el-form-item>
@@ -55,7 +51,9 @@
         <el-button v-if="!state.enableResetPassword"
                    type="primary"
                    class="login-content-submit"
-                   @click="submitForm(ruleFormRef)">
+                   @click="submitForm(ruleFormRef)"
+                   v-preReClick
+                   >
           <span>{{$t('message.login.signIn')}}</span>
         </el-button>
       </el-col>
@@ -64,16 +62,20 @@
       <el-col :span="11">
         <el-button v-if="!state.enableResetPassword"
                    class="login-content-resetPassword"
-                   @click="onResetPassword">
-          <span>{{$t('message.login.resetPassword')}}</span>
+                   @click="onResetPassword"
+                   v-preReClick
+                   >
+          {{$t('message.login.resetPassword')}}
         </el-button>
       </el-col>
       <el-col :span="11">
         <el-button v-if="state.enableResetPassword"
                    @click="onSubmitResetPassword"
                    class="login-content-resetPassword"
-                   type="danger">
-          <span>{{$t('message.login.resetPassword')}}</span>
+                   type="danger"
+                   v-preReClick
+                   >
+         {{$t('message.login.resetPassword')}}
         </el-button>
       </el-col>
       <el-col :span="2">
@@ -82,7 +84,9 @@
         <el-button v-if="state.enableResetPassword"
                    @click="state.enableResetPassword=false"
                    class="login-content-resetPassword"
-                   type="primary">
+                   type="primary"
+                   v-preReClick
+                   >
           <span>{{$t('message.login.signIn')}}</span>
         </el-button>
       </el-col>

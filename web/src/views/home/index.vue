@@ -175,14 +175,14 @@
           <h4>{{$t('message.home.target_username')}}:</h4>
           <h5 style="margin-bottom: 0.5em;">*您可以通过此操作将您的套餐Push到其它的用户中</h5>
           <el-form-item>
-            <el-input v-model="customerServiceStoreData.pushCustomerServiceRequest.value.to_user_name" disabled placeholder="正在开发完善中...敬请期待！"></el-input>
+            <el-input v-model="customerServiceStoreData.pushCustomerServiceRequest.value.to_user_name" placeholder="请在此输入目标用户的账号，请仔细核对！"></el-input>
           </el-form-item>
         </el-form>
       </div>
       <template #footer>
         <div class="dialog-footer">
           <el-button @click="closePushDialog">{{$t('message.common.button_cancel')}}</el-button>
-          <el-button type="primary" @click="toPush" disabled id="push_button">{{$t('message.common.button_confirm')}}</el-button>
+          <el-button type="primary" @click="toPush" id="push_button">{{$t('message.common.button_confirm')}}</el-button>
         </div>
       </template>
 
@@ -368,7 +368,11 @@ const closePushDialog = () => {
 };
 const toPush = () => {
   customerServiceStore.pushCustomerService().then((res) => {
-    ElMessage.success(res.msg)
+    ElNotification({
+    title: '操作已执行',
+    message: res.msg,
+    type: 'success',
+  })
     getCustomerServiceList()
     closePushDialog();
   });

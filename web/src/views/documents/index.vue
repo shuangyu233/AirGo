@@ -1,5 +1,5 @@
 <template>
-  <div style="">
+  <div>
     <!--<h2 style="margin: 2vh;color: var(--el-text-color-primary);">文档中心</h2>-->
     <el-card style="margin: 2vh;border-radius: 1vh" >
       <h2 style="margin-bottom: 2vh;">{{ $t("message.documents.documents_list") }}</h2>
@@ -35,13 +35,10 @@
 
 <script setup lang="ts">
 import {onMounted, reactive} from "vue";
-import {useApiStore} from "/@/stores/apiStore";
 import {storeToRefs} from "pinia";
 import {useArticleStore} from "/@/stores/user_logic/articleStore";
 import {DateStrToTime} from "../../utils/formatTime";
 import {useRouter} from "vue-router";
-const apiStore = useApiStore()
-const apiStoreData = storeToRefs(apiStore)
 const articleStore = useArticleStore()
 const articleStoreData = storeToRefs(articleStore)
 const router = useRouter()
@@ -131,4 +128,9 @@ onMounted(() => {
   font-size: 15px;
   color: #AC96F1;
 }
+
+.box-card{
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+}
+
 </style>

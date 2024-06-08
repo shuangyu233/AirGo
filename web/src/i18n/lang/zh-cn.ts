@@ -17,7 +17,7 @@ export default {
     home: "主页",
     shop: "商店",
     myOrder: "我的订单",
-    personal: "个人信息",
+    personal: "个人中心",
     serverStatus: "节点状态",
     documents: "使用文档",
     ticket: "我的工单",

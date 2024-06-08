@@ -14,7 +14,7 @@
         <div class="login-right-warp-mian">
           <div class="login-right-warp-main-title" style="margin-top: clamp(1.3rem, 2vw, 1.8rem);">
             <div>
-              <h3 style="font-size: clamp(1.5rem, 2vw, 1.8rem);" ><i class="ri-chat-1-fill"></i> 有朋自远方来，不亦悦乎。<br>
+              <h3 style="font-size: clamp(1.3rem, 2vw, 1.8rem);" ><i class="ri-chat-1-fill"></i> 有朋自远方来，不亦悦乎。<br>
               (=・ω・=)</h3>
             </div>
           </div>
@@ -114,6 +114,7 @@ onMounted(() => {
       img {
         width: 51px;
         height: 51px;
+        border-radius: 6.5px;
       }
 
       .login-left-logo-text { //logo
@@ -166,9 +167,9 @@ onMounted(() => {
         
         
         .login-right-warp-main-title {
-          height: 80px;
-          line-height: 35px;
+          height: auto;
           margin-top: 10px;
+          margin-bottom: 7px;
           font-size: 27px;
           text-align: center;
           letter-spacing: 2px;

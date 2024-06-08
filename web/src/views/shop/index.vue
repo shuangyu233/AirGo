@@ -1,6 +1,7 @@
 <template>
   <div class="lazy-img-container layout-pd">
     <div class="home-card-one mb15">
+      
       <el-radio-group v-model="state.goods_type" @change="getAllEnabledGoods">
         <el-radio-button :label="constantStore.GOODS_TYPE_SUBSCRIBE">
           <el-icon><Promotion /></el-icon>

@@ -5,7 +5,7 @@ export default {
     security_setting:"安全设置",
     financial_management:"财务管理",
     message_setting:"通知设置",
-    push_setting:"推送",
+    push_setting:"信息推送",
     account_setting:"账户设置",
     login_password:"登录密码",
     balance:"用户余额",
