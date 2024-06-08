@@ -3,7 +3,7 @@
     <div class="layout-footer-warp">
       <div class="mt5">    
         <span style="color: var(--el-text-color-primary--el-color-info-dark-2);">@風嶼Link「正在不断进化中...」| </span>
-        <span style="color: var(--el-text-color-primary--el-color-info-dark-2);"> build:2024/6/2</span>
+        <span style="color: var(--el-text-color-primary--el-color-info-dark-2);"> build:2024/6/8</span>
       </div>
     </div>
   </div>
