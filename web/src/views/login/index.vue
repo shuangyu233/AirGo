@@ -33,7 +33,6 @@
         </div>
       </div>
     </div>
-    <LayoutFooter class="login-footer" v-if="isFooter"/>
   </div>
 </template>
 
@@ -45,14 +44,12 @@ import {storeToRefs} from 'pinia';
 import {useThemeConfig} from '/@/stores/themeConfig';
 import {NextLoading} from '/@/utils/loading';
 import {useRoute} from "vue-router";
-import { Local, Session } from "/@/utils/storage";
+import { Session } from "/@/utils/storage";
 
 // 引入组件
 const Account = defineAsyncComponent(() => import('/@/views/login/component/account.vue'));
 const Register = defineAsyncComponent(() => import('/@/views/login/component/register.vue'));
 const RegisterRef = ref()
-const LayoutFooter = defineAsyncComponent(() => import('/@/layout/footer/index.vue'));
-
 
 // 定义变量内容
 const storesThemeConfig = useThemeConfig();
